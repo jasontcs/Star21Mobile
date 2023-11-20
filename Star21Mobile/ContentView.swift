@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject private(set) var viewModel: ViewModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        AuthenticationView(viewModel: .init())
+    }
+}
+
+extension ContentView {
+    @MainActor
+    final class ViewModel: ObservableObject {
+
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: .init())
     }
 }
