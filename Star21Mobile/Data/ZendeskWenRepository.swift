@@ -10,6 +10,7 @@ import Foundation
 protocol ZendeskWebRepositoryProtocol: WebRepository {
     func getSelf(_ identity: SessionEntity) async throws -> UserEntity
     func getRequests(_ identity: SessionEntity, forms: [TicketFormEntity], fields: [TicketFieldEntity]) async throws -> [OnlineRequestEntity]
+    func searchRequests(_ identity: SessionEntity, forms: [TicketFormEntity], fields: [TicketFieldEntity], query: String?, statuses: [String]?) async throws -> [OnlineRequestEntity]
     func postRequest(_ identity: SessionEntity, request: DraftRequestEntity, fields: [TicketFieldEntity]) async throws -> OnlineRequestEntity
     func getTicketForms(_ identity: SessionEntity, fields: [TicketFieldEntity]) async throws -> [TicketFormEntity]
     func getTicketFields(_ identity: SessionEntity) async throws -> [TicketFieldEntity]
@@ -46,6 +47,39 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
                 path: "requests",
                 method: .GET,
                 token: identity.token!,
+                onBehalfOf: identity.uid!
+            )
+        )
+        return try response.requests.map { try $0.toEntity(forms: forms, fields: fields) }
+    }
+
+    func searchRequests(_ identity: SessionEntity, forms: [TicketFormEntity], fields: [TicketFieldEntity], query: String?, statuses: [String]?) async throws -> [OnlineRequestEntity] {
+
+        guard identity.token != nil && identity.uid != nil else {
+            throw ZendeskAPIError.noToken
+        }
+
+        let params: [String: String] = {
+
+            var params = [String: String]()
+
+            if let query {
+                params["query"] = query
+            }
+
+            if let statuses {
+                params["status"] = statuses.joined(separator: ",")
+            }
+
+            return params
+        }()
+
+        let response: GetRequestsResponse = try await call(
+            endpoint: ZendeskAuthenticatedAPICall(
+                path: "requests/search.json",
+                method: .GET,
+                token: identity.token!,
+                params: params,
                 onBehalfOf: identity.uid!
             )
         )

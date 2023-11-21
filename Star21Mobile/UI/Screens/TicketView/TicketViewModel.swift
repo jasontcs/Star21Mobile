@@ -29,8 +29,12 @@ extension TicketView {
 
         private var cancellables = Set<AnyCancellable>()
 
-        func setActiveRequest(_ request: OnlineRequestEntity) {
-            appState.activeRequest = .withData(request)
+        func setActiveRequest(_ request: OnlineRequestEntity?) {
+            if let request {
+                appState.activeRequest = .withData(request)
+            } else {
+                appState.activeRequest = .nothing
+            }
         }
 
         func fetchDetails() async {

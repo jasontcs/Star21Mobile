@@ -11,8 +11,13 @@ struct LoginView: View {
     @ObservedObject private(set) var viewModel: ViewModel
 
     var body: some View {
-        Button("Login") {
-            viewModel.login()
+        VStack {
+            Button("Login") {
+                Task {
+                    await viewModel.login()
+                }
+            }
+            .navigationTitle("Profile")
         }
     }
 }

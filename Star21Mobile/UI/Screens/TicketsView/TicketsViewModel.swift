@@ -16,6 +16,8 @@ extension TicketsView {
         @Injected(\.ticketsService) private var ticketsService
 
         @Published var tickets: AsyncSnapshot<[OnlineRequestEntity]> = .nothing
+        @Published var searchText = ""
+        @Published var searchStatus: RequestStatus?
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -27,7 +29,11 @@ extension TicketsView {
         }
 
         func fetchTickets() async {
-            await ticketsService.fetchRequests()
+            let statuses: [RequestStatus]? = {
+                if let searchStatus { return [searchStatus] }
+                return nil
+            }()
+            await ticketsService.fetchRequests(searchText: searchText, statuses: statuses)
         }
 
         func fetchUser() async {

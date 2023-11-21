@@ -48,6 +48,9 @@ struct TicketView: View {
             viewModel.setActiveRequest(request)
             await viewModel.fetchDetails()
         }
+        .onDisappear {
+            viewModel.setActiveRequest(nil)
+        }
     }
 }
 

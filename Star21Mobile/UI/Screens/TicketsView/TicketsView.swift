@@ -14,6 +14,19 @@ struct TicketsView: View {
         VStack {
             if let tickets = viewModel.tickets.value {
                 List {
+                    Section {
+                        Picker("Status", selection: $viewModel.searchStatus) {
+                            Text("Any")
+                                .tag(Optional<RequestStatus>.none)
+                            ForEach(RequestStatus.allCases, id: \.rawValue) { status in
+                                Text(status.rawValue)
+                                    .tag(Optional(status))
+                            }
+                        }
+                        .onChange(of: viewModel.searchStatus) { _ in
+                            Task { await viewModel.fetchTickets() }
+                        }
+                    }
                     ForEach(tickets) { ticket in
                         NavigationLink(destination: TicketView(viewModel: .init(), request: ticket)) {
                             HStack {
@@ -30,8 +43,13 @@ struct TicketsView: View {
                         }
                     }
                 }
+                .listStyle(InsetGroupedListStyle())
                 .refreshable {
                     await viewModel.fetchTickets()
+                }
+                .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
+                .onSubmit(of: .search) {
+                    Task { await viewModel.fetchTickets() }
                 }
             } else {
                 HStack {

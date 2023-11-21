@@ -1,22 +1,24 @@
 //
-//  LoginViewModel.swift
+//  ProfileViewModel.swift
 //  Star21Mobile
 //
-//  Created by Jason Tse on 9/11/2023.
+//  Created by Jason Tse on 21/11/2023.
 //
 
-import SwiftUI
 import Combine
+import Foundation
 import Factory
 
-extension LoginView {
+extension ProfileView {
+
     @MainActor
     final class ViewModel: ObservableObject {
         @Injected(\.authenticationService) private var authenticationService
         @Injected(\.appState) private var appState
 
-        func login() async {
-            await authenticationService.login()
+        func logout() async {
+            await authenticationService.logout()
+
         }
     }
 }

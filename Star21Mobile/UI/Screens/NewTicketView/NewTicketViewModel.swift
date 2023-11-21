@@ -59,7 +59,7 @@ extension NewTicketView {
         }
 
         func fetchTickets() async {
-            await ticketsService.fetchRequests()
+            await ticketsService.fetchRequests(searchText: nil, statuses: nil)
         }
 
         func fetchUser() async {

@@ -25,7 +25,7 @@ struct BottomBar: View {
                 selectedTab = .home
             } label: {
                 ZStack {
-                    BottomBarButtonView(image: "house.fill", text: "Home", isActive: selectedTab == .home)
+                    BottomBarButtonView(image: "house", text: "Home", isActive: selectedTab == .home)
                 }
             }
 
@@ -61,7 +61,7 @@ struct BottomBar: View {
                 Button {
                     selectedTab = .notification
                 } label: {
-                    BottomBarButtonView(image: "bell", text: "Notification", isActive: selectedTab == .notification)
+                    BottomBarButtonView(image: "ellipsis.message", text: "Chat", isActive: selectedTab == .notification)
                 }
                 // Profile
                 Button {

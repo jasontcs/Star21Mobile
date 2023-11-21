@@ -52,6 +52,9 @@
 		B0DD0BFD2B058FD00048045D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0DD0BFC2B058FD00048045D /* .swiftlint.yml */; };
 		B0F1F8FA2B0ACEC100D143C3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F8F92B0ACEC100D143C3 /* Comment.swift */; };
 		B0F1F8FC2B0AD9CD00D143C3 /* CommentTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F8FB2B0AD9CD00D143C3 /* CommentTile.swift */; };
+		B0F1F8FE2B0C146800D143C3 /* HotlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */; };
+		B0F1F9032B0C160200D143C3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F9022B0C160200D143C3 /* ProfileView.swift */; };
+		B0F1F9052B0C160B00D143C3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		B0DD0BFC2B058FD00048045D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B0F1F8F92B0ACEC100D143C3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		B0F1F8FB2B0AD9CD00D143C3 /* CommentTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTile.swift; sourceTree = "<group>"; };
+		B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotlineButton.swift; sourceTree = "<group>"; };
+		B0F1F9022B0C160200D143C3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,7 @@
 		B0ACB8D72AF8529E00DD7F36 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B0F1F8FF2B0C15DE00D143C3 /* ProfileView */,
 				B06ECDDF2B06E06800F29C41 /* NewTicketView */,
 				B018DC2D2B01EB4A00E341C1 /* TicketsView */,
 				B018DC2A2B01EB1400E341C1 /* TicketView */,
@@ -236,7 +243,6 @@
 		B0ACB8D82AF852AC00DD7F36 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -321,8 +327,19 @@
 			isa = PBXGroup;
 			children = (
 				B0ACB9302AFE0C7400DD7F36 /* MainView.swift */,
+				B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */,
+				B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		B0F1F8FF2B0C15DE00D143C3 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				B0F1F9022B0C160200D143C3 /* ProfileView.swift */,
+				B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,12 +453,15 @@
 				B0ACB8B62AF630F500DD7F36 /* Star21MobileApp.swift in Sources */,
 				B0ACB8CA2AF6316C00DD7F36 /* Models.swift in Sources */,
 				B06ECDE32B06E08700F29C41 /* NewTicketViewModel.swift in Sources */,
+				B0F1F9032B0C160200D143C3 /* ProfileView.swift in Sources */,
 				B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */,
 				B0ACB8DE2AF855A700DD7F36 /* ZendeskWenRepository.swift in Sources */,
 				B024D00E2B06E42D00428F96 /* TicketView.swift in Sources */,
 				B024D0132B06E80000428F96 /* MockData.swift in Sources */,
+				B0F1F9052B0C160B00D143C3 /* ProfileViewModel.swift in Sources */,
 				B0ACB91C2AFC913F00DD7F36 /* CancelBag.swift in Sources */,
 				B0ACB9132AFC415F00DD7F36 /* LoginViewModel.swift in Sources */,
+				B0F1F8FE2B0C146800D143C3 /* HotlineButton.swift in Sources */,
 				B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */,
 				B024D0102B06E43700428F96 /* TicketViewModel.swift in Sources */,
 				B0ACB8E32AF8590000DD7F36 /* APICall.swift in Sources */,

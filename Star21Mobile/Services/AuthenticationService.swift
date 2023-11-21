@@ -9,13 +9,15 @@ import Combine
 import Foundation
 
 protocol AuthenticationServiceProtocol {
-    func login()
+    func login() async
+    func logout() async
 }
 
 struct AuthenticationService: AuthenticationServiceProtocol {
+
     let appState: AppState
 
-    func login() {
+    func login() async {
         Task {
             appState.session = .withData(
                 SessionEntity(
@@ -23,6 +25,12 @@ struct AuthenticationService: AuthenticationServiceProtocol {
                     token: "d7181450045b91457d8c43af5ac5e82fa16b9a6d64d5909bc5e336ff347bd79b"
                 )
             )
+        }
+    }
+
+    func logout() async {
+        Task {
+            appState.session = .nothing
         }
     }
 

@@ -12,7 +12,7 @@ protocol TicketsServiceProtocol {
 
     func fetchUser  () async
 
-    func fetchRequests  ()async
+    func fetchRequests (searchText: String?, statuses: [RequestStatus]?) async
 
     func saveRequest  (_ request: any RequestEntity) async
 
@@ -44,7 +44,7 @@ struct TicketsService: TicketsServiceProtocol {
         }
     }
 
-    func fetchRequests() async {
+    func fetchRequests(searchText: String?, statuses: [RequestStatus]?) async {
         do {
             let cancelBag = CancelBag()
 
@@ -54,7 +54,13 @@ struct TicketsService: TicketsServiceProtocol {
             }
             let fields = try await webRepository.getTicketFields(session)
             let forms = try await webRepository.getTicketForms(session, fields: fields)
-            let requests = try await webRepository.getRequests(session, forms: forms, fields: fields)
+            let requests: [OnlineRequestEntity] = try await {
+                if searchText != nil || statuses != nil {
+                    return try await webRepository.searchRequests(session, forms: forms, fields: fields, query: searchText, statuses: statuses?.map { $0.rawValue })
+                } else {
+                    return try await webRepository.getRequests(session, forms: forms, fields: fields)
+                }
+            }()
 
             appState.requests = .withData(requests)
         } catch {
@@ -90,7 +96,7 @@ struct TicketsService: TicketsServiceProtocol {
         } catch {
             appState.requests = .withError(error)
         }
-        await self.fetchRequests()
+        await self.fetchRequests(searchText: nil, statuses: nil)
     }
 
     func fetchForms() async {

@@ -15,22 +15,26 @@ struct MainView: View {
         NavigationView {
             VStack {
                 if selectedTab == .home {
-                    TicketsView(viewModel: .init())
+                    Text("Home")
+                        .navigationTitle("Home")
                 }
                 if selectedTab == .search {
-                    Text("Search")
+                    TicketsView(viewModel: .init())
                 }
                 if selectedTab == .plus {
                     NewTicketView(viewModel: .init())
                 }
                 if selectedTab == .notification {
-                    Text("Notification")
+                    Text("Chat")
                 }
                 if selectedTab == .profile {
-                    Text("Profile")
+                    ProfileView(viewModel: .init())
                 }
                 Spacer()
                 BottomBar(selectedTab: $selectedTab)
+            }
+            .toolbar {
+                HotlineButton()
             }
         }
     }
