@@ -16,16 +16,20 @@ extension NewTicketView {
 
         @Injected(\.appState) private var appState
         @Injected(\.ticketsService) private var ticketsService
+        @Injected(\.appConfig) private var appConfig
 
         @Published var user: AsyncSnapshot<UserEntity> = .nothing
         @Published var forms: AsyncSnapshot<[TicketFormEntity]> = .nothing
         @Published var selectedForm: TicketFormEntity?
         @Published var formValues: [CustomFieldValueEntity] = []
         @Published var hiddenFields: [TicketFieldEntity] = []
+        @Published var submittedRequest: OnlineRequestEntity?
+        @Published var isSimCardActivationFormSelected = false
 
         private var cancellables = Set<AnyCancellable>()
 
         init() {
+            print("init")
             appState.$session
                 .listen(in: &cancellables) { session in
                     self.user = session.map { $0.info }.unwrap()
@@ -41,10 +45,12 @@ extension NewTicketView {
                 .listen(in: &cancellables) { forms in
                     self.forms = forms
                     self.selectedForm = self.selectedForm ?? forms.value?.first
+                    self.selectedForm = forms.value?.first { $0.id == self.appConfig.simCardActivationFormId }
                 }
             $selectedForm
-                .listen(in: &cancellables) { _ in
+                .listen(in: &cancellables) { form in
                     self.resetForm()
+                    self.isSimCardActivationFormSelected = form == self.forms.value?.first { $0.id == self.appConfig.simCardActivationFormId }
                 }
             $formValues
                 .listen(in: &cancellables) { values in
@@ -70,7 +76,7 @@ extension NewTicketView {
             await ticketsService.fetchForms()
         }
 
-        func submitRequest() async {
+        func submitRequest(isSimCardActivation: Bool) async {
 
             var customValues = [CustomFieldValueEntity]()
 
@@ -96,7 +102,19 @@ extension NewTicketView {
                 priority: .normal
             )
 
-            await ticketsService.saveRequest(draft)
+            if isSimCardActivation {
+                await ticketsService.saveSimActivationRequest(draft)
+            } else {
+                await ticketsService.saveRequest(draft)
+            }
+            submittedRequest = appState.activeRequest.value as? OnlineRequestEntity
+        }
+
+        func simBarcodeOnScanned(_ code: Int) {
+            if let index = formValues
+                .firstIndex(where: { $0.field.title.contains("Barcode") }) {
+                    formValues[index] = .init(field: formValues[index].field, value: .double(Double(code)))
+                }
         }
 
         private func resetForm() {
@@ -107,5 +125,10 @@ extension NewTicketView {
     struct FieldData: Hashable, Codable {
         var visible: Bool
         var value: Value?
+    }
+
+    enum PagingPath: Hashable {
+        case question(TicketFieldEntity)
+        case submit
     }
 }

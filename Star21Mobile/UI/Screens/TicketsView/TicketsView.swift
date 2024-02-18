@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TicketsView: View {
-    @ObservedObject private(set) var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
+    @EnvironmentObject private var appRouting: AppRouting
 
     var body: some View {
         VStack {
@@ -27,18 +28,20 @@ struct TicketsView: View {
                             Task { await viewModel.fetchTickets() }
                         }
                     }
-                    ForEach(tickets) { ticket in
-                        NavigationLink(destination: TicketView(viewModel: .init(), request: ticket)) {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(ticket.subject)
-                                        .lineLimit(1)
-                                    Text(ticket.description)
-                                        .foregroundColor(.gray)
-                                        .lineLimit(1)
+                    Section(header: Text("Total: \(tickets.count)")) {
+                        ForEach(tickets) { ticket in
+                            NavigationLink(value: AppRouting.Ticket.entity(ticket)) {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(ticket.subject)
+                                            .lineLimit(1)
+                                        Text(ticket.description.markdownToAttributed() ?? "")
+                                            .foregroundColor(.gray)
+                                            .lineLimit(1)
+                                    }
+                                    Spacer()
+                                    Text(ticket.status.rawValue)
                                 }
-                                Spacer()
-                                Text(ticket.status.rawValue)
                             }
                         }
                     }

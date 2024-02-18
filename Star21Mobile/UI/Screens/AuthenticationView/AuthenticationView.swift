@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct AuthenticationView: View {
-    @ObservedObject private(set) var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
 
+    @ViewBuilder
     var body: some View {
         if viewModel.authenticated {
-            MainView()
+            MainView(viewModel: .init())
         } else {
-            LoginView(viewModel: .init())
+            switch viewModel.authenticationState {
+            case .emailPending:
+                EmailFieldView(viewModel: .init())
+            case .emailChallenge(token: let token):
+                EmailVerificationView(viewModel: .init())
+            case .mobilePending(token: let token):
+                MobileFieldView(viewModel: .init())
+            case .mobileChallenge(token: let token):
+                SMSVerificationView(viewModel: .init())
+            case .complete:
+                EmptyView()
+            }
         }
     }
 }

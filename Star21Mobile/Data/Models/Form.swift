@@ -56,7 +56,7 @@ struct TicketForm: IdentifiableModel {
 
 struct EndUserCondition: Model {
     let parentFieldID: Int
-    let parentFieldType: ParentFieldType
+    let parentFieldType: TicketFieldType
     let value: Value
     let childFields: [ChildField]
 
@@ -76,8 +76,4 @@ struct ChildField: IdentifiableModel {
         case id
         case isRequired = "is_required"
     }
-}
-
-enum ParentFieldType: String, Codable {
-    case checkbox = "checkbox"
 }

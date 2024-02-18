@@ -16,9 +16,10 @@ extension TicketView {
 
         init(custom: CustomFieldValueEntity) {
             self.title = custom.field.title
+            var isTag = false
             guard let value = custom.value else {
                 self.value = nil
-                self.isTag = false
+                self.isTag = isTag
                 return
             }
             switch custom.field.type {
@@ -61,13 +62,16 @@ extension TicketView {
 //            case .lookup:
 //                <#code#>
             default:
-                self.isTag = false
-                guard let value = custom.value?.raw() else {
+                if let options = custom.valueOptions {
+                    self.value = options.map { $0.name }.joined(separator: ",")
+
+                } else if let value = custom.value?.raw() {
+                    self.value = "\(value)"
+                } else {
                     self.value = nil
-                    return
                 }
-                self.value = "\(value)"
             }
+            self.isTag = isTag
         }
 
         init(title: String, value: String?, isTag: Bool = false) {
@@ -80,11 +84,9 @@ extension TicketView {
             HStack {
                 Text(title)
                 Spacer()
-                if isTag {
-                    Text(value ?? "-").foregroundColor(.red)
-                } else {
-                    Text(value ?? "-").foregroundColor(.secondary)
-                }
+                Text(value?.markdownToAttributed() ?? "-")
+                    .foregroundColor(isTag ? .red : .secondary)
+
             }
         }
     }

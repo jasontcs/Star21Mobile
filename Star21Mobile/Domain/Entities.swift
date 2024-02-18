@@ -30,6 +30,36 @@ struct CustomFieldValueEntity: Hashable, Identifiable {
     let value: Value?
 
     var id: Int { field.id }
+
+    var valueOptions: [TicketFieldOption]? {
+        switch field.type {
+        case .tagger:
+            return field.options?.filter { $0.value == value?.raw() as? String }
+        default:
+            return nil
+        }
+    }
+
+    var displayValue: String? {
+        switch value {
+        case .bool(let val):
+            return val ? "YES" : "NO"
+        case .double(let val):
+            return val.removeZerosFromEnd()
+        case .string(let val):
+            switch field.type {
+            case .tagger:
+                return valueOptions?.first { $0.value == val }?.name
+            case .multiselect:
+                return val.split(separator: ",").compactMap { _ in valueOptions?.first { $0.value == val }?.name ?? nil }.joined(separator: ",")
+            default:
+                return val
+            }
+        case .none:
+            return nil
+        }
+
+    }
 }
 
 struct DraftRequestEntity: RequestEntity {
@@ -117,7 +147,6 @@ enum TicketFieldType: String, CaseIterableDefaultsLast {
     case group
     case customStatus = "custom_status"
 
-    case text
     case textarea
     case checkbox
     case date
@@ -128,6 +157,7 @@ enum TicketFieldType: String, CaseIterableDefaultsLast {
     case multiselect
     case tagger
     case lookup
+    case text
 }
 
 struct TicketFieldOption: Hashable, Identifiable {
@@ -141,4 +171,29 @@ struct TicketFormCondition: Hashable {
     let parent: TicketFieldEntity
     let value: Value
     let children: [TicketFieldEntity]
+}
+
+enum AuthenticationState: Hashable {
+    case emailPending
+    case emailChallenge(token: String)
+    case mobilePending(token: String)
+    case mobileChallenge(token: String)
+    case complete
+}
+
+struct NotificationEntity: Hashable, Identifiable {
+    let id: Int
+    let title: String
+    let description: String
+    let content: String?
+    let avatarUrl: URL?
+    let redirectUrl: URL?
+    let createdAt: Date
+    let updatedAt: Date
+    let status: NotificationStatus
+}
+
+enum NotificationStatus: String, CaseIterableDefaultsLast {
+    case read
+    case unread
 }

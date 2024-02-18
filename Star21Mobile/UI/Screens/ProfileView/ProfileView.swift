@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject private(set) var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
-        Button("Logout", role: .destructive) {
-            Task {
-                await viewModel.logout()
+        Form {
+            List {
+                if let info = viewModel.session.value?.info {
+                    InfoTile(title: "Name", value: info.name)
+                    InfoTile(title: "Email", value: info.email)
+                }
+            }
+            Section {
+                Button("Logout", role: .destructive) {
+                    Task {
+                        await viewModel.logout()
+                    }
+                }
             }
         }
+        .navigationTitle("Profile")
     }
 }
 

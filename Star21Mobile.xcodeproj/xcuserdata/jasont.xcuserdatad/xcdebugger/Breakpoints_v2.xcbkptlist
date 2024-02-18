@@ -7,17 +7,177 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0EAA08D2-3497-4A2E-862A-6A4E1C58B8DA"
+            uuid = "30F93842-02CC-42B2-A2E2-A237D60B82F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Star21Mobile/Utilities/Value.swift"
+            filePath = "Star21Mobile/UI/Screens/NewTicketView/NewTicketViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "init(from:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "resetForm()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "30F93842-02CC-42B2-A2E2-A237D60B82F4 - dd55766bb55ef565"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Star21Mobile.NewTicketView.ViewModel.resetForm() -&gt; ()"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/UI/Screens/NewTicketView/NewTicketViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "30F93842-02CC-42B2-A2E2-A237D60B82F4 - 521271bb0b801b89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Star21Mobile.TicketFieldEntity) -&gt; Star21Mobile.CustomFieldValueEntity in Star21Mobile.NewTicketView.ViewModel.resetForm() -&gt; ()"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/UI/Screens/NewTicketView/NewTicketViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24CA8614-8DC9-4734-A561-49D2FD8904BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star21Mobile/Services/TicketsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "saveRequest(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E5CB6E3-1DE1-4464-B951-7DA0B11D4000"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star21Mobile/Data/ZendeskWenRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getRequests(_:forms:fields:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E5CB6E3-1DE1-4464-B951-7DA0B11D4000 - 22cdcb7d149020f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Star21Mobile.ZendeskWebRepository.getRequests(_: Star21Mobile.SessionEntity, forms: Swift.Array&lt;Star21Mobile.TicketFormEntity&gt;, fields: Swift.Array&lt;Star21Mobile.TicketFieldEntity&gt;) async throws -&gt; Swift.Array&lt;Star21Mobile.OnlineRequestEntity&gt;"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/ZendeskWenRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "6E5CB6E3-1DE1-4464-B951-7DA0B11D4000 - d7c7ac4e5887e7a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Star21Mobile.Request) throws -&gt; Star21Mobile.OnlineRequestEntity in Star21Mobile.ZendeskWebRepository.getRequests(_: Star21Mobile.SessionEntity, forms: Swift.Array&lt;Star21Mobile.TicketFormEntity&gt;, fields: Swift.Array&lt;Star21Mobile.TicketFieldEntity&gt;) async throws -&gt; Swift.Array&lt;Star21Mobile.OnlineRequestEntity&gt;"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/ZendeskWenRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DB844D6-B0E4-45EB-BD9A-273FA863D3A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star21Mobile/Data/WebRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "log(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "268D49E2-2491-4278-B5A1-5228DE9956F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star21Mobile/Data/WebRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "call(endpoint:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "268D49E2-2491-4278-B5A1-5228DE9956F3 - 86beccca6013cc12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Star21Mobile.WebRepository.call&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: Star21Mobile.APICall) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/WebRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "268D49E2-2491-4278-B5A1-5228DE9956F3 - 86beccca6013cc12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Star21Mobile.WebRepository.call&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: Star21Mobile.APICall) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Star21Mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/WebRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "544">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -54,7 +54,7 @@ extension DraftRequest {
 }
 
 extension TicketForm {
-    func toEntity(fields: [TicketFieldEntity]) -> TicketFormEntity {
+    func toEntity(fields: [TicketFieldEntity]) throws -> TicketFormEntity {
 
         let conditions = endUserConditions
             .map { raw in
@@ -113,7 +113,7 @@ extension CustomFieldOption {
 }
 
 extension Comment {
-    func toEntity(users: [CommentUser], organizations: [CommentOrganization]) -> CommentEntity {
+    func toEntity(users: [CommentUser], organizations: [CommentOrganization]) throws -> CommentEntity {
         let user = users.first { $0.id == authorID }!
 
         return .init(

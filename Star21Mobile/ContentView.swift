@@ -6,25 +6,35 @@
 //
 
 import SwiftUI
+import Factory
+import Combine
 
 struct ContentView: View {
 
-    @ObservedObject private(set) var viewModel: ViewModel
+    @ObservedObject private (set) var appRouting: AppRouting
+    @Injected(\.appState) private (set) var appState
+    @State private var showLoading = false
 
     var body: some View {
-        AuthenticationView(viewModel: .init())
-    }
-}
-
-extension ContentView {
-    @MainActor
-    final class ViewModel: ObservableObject {
-
+        LoadingView(isShowing: $showLoading) {
+            NavigationStack(path: $appRouting.path) {
+                AuthenticationView(viewModel: .init())
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(appRouting)
+        }
+        .onReceive(appState.$showLoading) { showLoading = $0 }
+        .onChange(of: appRouting.path) { path in
+            print(path)
+        }
+        .onChange(of: appRouting.tab) { tab in
+            print(tab)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: .init())
+        ContentView(appRouting: .init())
     }
 }

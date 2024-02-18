@@ -13,4 +13,6 @@ final class AppState {
     @Published var activeRequest: AsyncSnapshot<any RequestEntity> = .nothing
     @Published var requests: AsyncSnapshot<[OnlineRequestEntity]> = .nothing
     @Published var ticketForms: AsyncSnapshot<[TicketFormEntity]> = .nothing
+    @Published var showLoading = false
+    @Published var authenticationState: AuthenticationState = .emailPending // fast
 }

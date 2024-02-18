@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import Factory
 
 protocol TicketsServiceProtocol {
 
@@ -16,9 +17,13 @@ protocol TicketsServiceProtocol {
 
     func saveRequest  (_ request: any RequestEntity) async
 
+    func saveSimActivationRequest (_ request: DraftRequestEntity) async
+
     func fetchForms () async
 
     func fetchRequestDetail () async
+
+    func fetchRequestDetail (_ id: Int) async
 }
 
 struct TicketsService: TicketsServiceProtocol {
@@ -26,6 +31,8 @@ struct TicketsService: TicketsServiceProtocol {
     let appState: AppState
 
     let webRepository: ZendeskWebRepositoryProtocol
+
+    @Injected(\.appConfig) private var appConfig
 
     func fetchUser() async {
         do {
@@ -55,7 +62,7 @@ struct TicketsService: TicketsServiceProtocol {
             let fields = try await webRepository.getTicketFields(session)
             let forms = try await webRepository.getTicketForms(session, fields: fields)
             let requests: [OnlineRequestEntity] = try await {
-                if searchText != nil || statuses != nil {
+                if searchText?.isEmpty == false || statuses != nil {
                     return try await webRepository.searchRequests(session, forms: forms, fields: fields, query: searchText, statuses: statuses?.map { $0.rawValue })
                 } else {
                     return try await webRepository.getRequests(session, forms: forms, fields: fields)
@@ -66,6 +73,32 @@ struct TicketsService: TicketsServiceProtocol {
         } catch {
             appState.requests = .withError(error)
         }
+    }
+
+    private func simActivationRequestToMobileServiceRequest(_ request: DraftRequestEntity) throws -> DraftRequestEntity {
+        guard request.ticketForm?.id == appConfig.simCardActivationFormId else {
+            throw InputError()
+        }
+
+        guard let form = appState.ticketForms.value?.first(where: { $0.id == appConfig.mobileServiceRequestFormId })  else {
+            throw ValueIsMissingError()
+        }
+
+        let description = request.customFields
+            .compactMap { field in
+                guard let value = field.displayValue else { return nil }
+
+                return "<p><b>\(field.field.title)</b><div>\(value)</div></p>"
+            }
+            .joined(separator: "")
+
+        return .init(
+            subject: "Sim Card Activation Request",
+            description: description,
+            ticketForm: form,
+            customFields: [],
+            priority: .normal
+        )
     }
 
     func saveRequest(_ request: any RequestEntity) async {
@@ -84,7 +117,7 @@ struct TicketsService: TicketsServiceProtocol {
             let fields = try await webRepository.getTicketFields(session)
 
             switch request {
-            case let request as DraftRequestEntity:
+            case var request as DraftRequestEntity:
                 submitted = try await webRepository.postRequest(session, request: request, fields: fields)
             case let request as OnlineRequestEntity:
                 throw ValueIsMissingError()
@@ -97,6 +130,17 @@ struct TicketsService: TicketsServiceProtocol {
             appState.requests = .withError(error)
         }
         await self.fetchRequests(searchText: nil, statuses: nil)
+    }
+
+    func saveSimActivationRequest(_ request: DraftRequestEntity) async {
+        do {
+            let convertedRequest = try simActivationRequestToMobileServiceRequest(request)
+
+            await saveRequest(convertedRequest)
+
+        } catch {
+            appState.requests = .withError(error)
+        }
     }
 
     func fetchForms() async {
@@ -133,6 +177,29 @@ struct TicketsService: TicketsServiceProtocol {
 
             let comments = try await webRepository.getTicketComments(session, request: active)
             appState.activeRequest = .withData(active.withComments(comments))
+        } catch {
+            appState.activeRequest = .withError(error)
+        }
+    }
+
+    func fetchRequestDetail(_ id: Int) async {
+        do {
+            let cancelBag = CancelBag()
+
+            appState.activeRequest.setIsWaiting(cancelBag: cancelBag)
+            guard let session = appState.session.value else {
+                throw ValueIsMissingError()
+            }
+            let fields = try await webRepository.getTicketFields(session)
+            let forms = try await webRepository.getTicketForms(session, fields: fields)
+            let request: OnlineRequestEntity = try await webRepository.getRequest(session, forms: forms, fields: fields, id: id)
+
+            guard let session = appState.session.value else {
+                throw ValueIsMissingError()
+            }
+
+            let comments = try await webRepository.getTicketComments(session, request: request)
+            appState.activeRequest = .withData(request.withComments(comments))
         } catch {
             appState.activeRequest = .withError(error)
         }

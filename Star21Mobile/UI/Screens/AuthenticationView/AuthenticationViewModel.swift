@@ -13,17 +13,22 @@ extension AuthenticationView {
     @MainActor
     final class ViewModel: ObservableObject {
         @Injected(\.appState) private var appState
-        @Published var authenticated = false
+        @Published var authenticated = true
+        @Published var authenticationState: AuthenticationState = .emailPending
         private var cancellables = Set<AnyCancellable>()
 
         init() {
             appState.$session
-                .receive(on: DispatchQueue.main)
-                .sink {_ in
-                } receiveValue: { session in
+                .removeDuplicates { prev, curr in
+                    prev.value == curr.value
+                }
+                .listen(in: &cancellables) { session in
                     self.authenticated = session.value?.token != nil
                 }
-                .store(in: &cancellables)
+            appState.$authenticationState
+                .listen(in: &cancellables) { state in
+                    self.authenticationState = state
+                }
         }
     }
 }

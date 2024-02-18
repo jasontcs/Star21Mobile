@@ -81,6 +81,12 @@ struct ValueIsMissingError: Error {
     }
 }
 
+struct InputError: Error {
+    var localizedDescription: String {
+        NSLocalizedString("Input error", comment: "")
+    }
+}
+
 extension Optional: SomeOptional {
     func unwrap() throws -> Wrapped {
         switch self {

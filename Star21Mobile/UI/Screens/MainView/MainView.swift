@@ -6,42 +6,57 @@
 //
 
 import SwiftUI
+import Factory
 
 struct MainView: View {
-
-    @State var selectedTab: BottomBarSelectedTab = .home
+    @StateObject var viewModel: ViewModel
+    @EnvironmentObject private var appRouting: AppRouting
 
     var body: some View {
-        NavigationView {
-            VStack {
-                if selectedTab == .home {
-                    Text("Home")
-                        .navigationTitle("Home")
-                }
-                if selectedTab == .search {
-                    TicketsView(viewModel: .init())
-                }
-                if selectedTab == .plus {
-                    NewTicketView(viewModel: .init())
-                }
-                if selectedTab == .notification {
-                    Text("Chat")
-                }
-                if selectedTab == .profile {
-                    ProfileView(viewModel: .init())
-                }
-                Spacer()
-                BottomBar(selectedTab: $selectedTab)
+        VStack {
+            switch appRouting.tab {
+            case .home:
+                HomeView(viewModel: .init())
+            case .tickets:
+                TicketsView(viewModel: .init())
+            case .newTicket:
+                NewTicketView(viewModel: .init())
+            case .chat:
+                ChatView()
+            case .profile:
+                ProfileView(viewModel: .init())
             }
-            .toolbar {
+            Spacer()
+            BottomBar(selectedTab: $appRouting.tab)
+
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 HotlineButton()
             }
+        }
+        .navigationDestination(for: AppRouting.Ticket.self) { route in
+            TicketView(viewModel: .init(), request: route)
+        }
+        .task {
+            await viewModel.fetchUser()
+        }
+    }
+}
+
+extension MainView {
+    @MainActor
+    final class ViewModel: ObservableObject {
+        @Injected(\.ticketsService) private var ticketsService
+
+        func fetchUser() async {
+            await ticketsService.fetchUser()
         }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(viewModel: .init())
     }
 }

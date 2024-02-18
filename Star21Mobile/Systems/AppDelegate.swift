@@ -8,8 +8,6 @@
 import UIKit
 import CoreData
 
-import Swinject
-
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var systemEventsHandler: SystemEventsHandler? = {
@@ -20,6 +18,5 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-
     }
 }

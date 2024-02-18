@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-enum BottomBarSelectedTab: Int {
-    case home = 0
-    case search = 1
-    case plus = 2
-    case notification = 3
-    case profile = 4
-}
 struct BottomBar: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding var selectedTab: BottomBarSelectedTab
+    @Binding var selectedTab: AppRouting.Tab
     var body: some View {
 
         HStack(spacing: 10) {
@@ -31,55 +24,55 @@ struct BottomBar: View {
 
             // Search
             Button {
-                    selectedTab = .search
-                } label: {
-                    BottomBarButtonView(image: "magnifyingglass", text: "Search", isActive: selectedTab == .search)
-                }
+                selectedTab = .tickets
+            } label: {
+                BottomBarButtonView(image: "magnifyingglass", text: "Search", isActive: selectedTab == .tickets)
+            }
 
-                Button {
-                    selectedTab = .plus
+            Button {
+                selectedTab = .newTicket
 
-                } label: {
-                    VStack {
-                        ZStack {
-                            VStack(spacing: 3) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .frame(width: 60, height: 60)
-                                    .foregroundColor(.purple)
+            } label: {
+                VStack {
+                    ZStack {
+                        VStack(spacing: 3) {
+                            RoundedRectangle(cornerRadius: 30)
+                                .frame(width: 60, height: 60)
+                                .foregroundColor(.purple)
 
-                            }
-                            VStack(spacing: 3) {
-                                Image(systemName: "plus").font(.title).foregroundColor(.white)
+                        }
+                        VStack(spacing: 3) {
+                            Image(systemName: "plus").font(.title).foregroundColor(.white)
 
-                            }
-                        }.padding(EdgeInsets(top: (UIDevice.isIPad ? -21 : -23), leading: 0, bottom: 0, trailing: 0))
-                            Spacer()
+                        }
+                    }.padding(EdgeInsets(top: (UIDevice.isIPad ? -21 : -23), leading: 0, bottom: 0, trailing: 0))
+                        Spacer()
 
-                    }
-                }
-                // Notification
-                Button {
-                    selectedTab = .notification
-                } label: {
-                    BottomBarButtonView(image: "ellipsis.message", text: "Chat", isActive: selectedTab == .notification)
-                }
-                // Profile
-                Button {
-                    selectedTab = .profile
-                } label: {
-
-                    BottomBarButtonView(image: "person", text: "Profile", isActive: selectedTab == .profile)
                 }
             }
-            .frame(height: 40)
-            .shadow(color: .black.opacity(colorScheme == .dark ? 0.5 : 0.2), radius: 10, x: 0, y: 0)
+            // Notification
+            Button {
+                selectedTab = .chat
+            } label: {
+                BottomBarButtonView(image: "ellipsis.message", text: "Chat", isActive: selectedTab == .chat)
+            }
+            // Profile
+            Button {
+                selectedTab = .profile
+            } label: {
+
+                BottomBarButtonView(image: "person", text: "Profile", isActive: selectedTab == .profile)
+            }
+        }
+        .frame(height: 40)
+        .shadow(color: .black.opacity(colorScheme == .dark ? 0.5 : 0.2), radius: 10, x: 0, y: 0)
 
     }
 }
 
 struct BottomBar_Previews: PreviewProvider {
     static var previews: some View {
-        BottomBar(selectedTab: .constant(.plus))
+        BottomBar(selectedTab: .constant(.newTicket))
     }
 }
 

@@ -16,6 +16,17 @@ extension ProfileView {
         @Injected(\.authenticationService) private var authenticationService
         @Injected(\.appState) private var appState
 
+        init() {
+            appState.$session
+                .listen(in: &cancellables) { session in
+                    self.session = session
+                }
+        }
+
+        @Published var session: AsyncSnapshot<SessionEntity> = .nothing
+
+        private var cancellables = Set<AnyCancellable>()
+
         func logout() async {
             await authenticationService.logout()
 
