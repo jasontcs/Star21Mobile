@@ -20,11 +20,15 @@ private let session = {
 
 extension Container {
 
+    var appConfig: Factory<AppConfig> {
+        self { DevAppConfig() }.shared
+    }
+
     var webRepository: Factory<ZendeskWebRepositoryProtocol> {
 
         let zendeskWebRepository = ZendeskWebRepository(
             session: session,
-            baseURL: "https://star21cloud1679352336.zendesk.com/api/v2/"
+            baseURL: Container.shared.appConfig().zendeskApiBaseUrl
         )
 
         return self { zendeskWebRepository }

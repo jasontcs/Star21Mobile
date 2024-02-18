@@ -9,9 +9,22 @@ import SwiftUI
 
 struct TicketView: View {
 
-    @ObservedObject private(set) var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
 
-    let request: OnlineRequestEntity
+    let request: OnlineRequestEntity?
+    let requestId: Int?
+
+    init(viewModel: ViewModel, request: AppRouting.Ticket) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        switch request {
+        case .entity(let request):
+            self.request = request
+            self.requestId = nil
+        case .id(let requestId):
+            self.request = nil
+            self.requestId = requestId
+        }
+    }
 
     var body: some View {
         GeometryReader {  _ in
@@ -45,7 +58,12 @@ struct TicketView: View {
             }
         }
         .task {
-            viewModel.setActiveRequest(request)
+            if let request {
+                viewModel.setActiveRequest(request)
+            }
+            if let requestId {
+                await viewModel.getActiveRequest(requestId)
+            }
             await viewModel.fetchDetails()
         }
         .onDisappear {
@@ -56,6 +74,6 @@ struct TicketView: View {
 
 struct TicketView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketView(viewModel: .init(), request: MockData.onlineTicket)
+        TicketView(viewModel: .init(), request: .entity(MockData.onlineTicket))
     }
 }

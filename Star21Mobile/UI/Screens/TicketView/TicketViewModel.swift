@@ -37,6 +37,10 @@ extension TicketView {
             }
         }
 
+        func getActiveRequest(_ requestId: Int) async {
+            await ticketsService.fetchRequestDetail(requestId)
+        }
+
         func fetchDetails() async {
             await ticketsService.fetchRequestDetail()
         }

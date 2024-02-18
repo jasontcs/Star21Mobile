@@ -83,3 +83,34 @@ func isValidEmail() -> Bool {
     return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
    }
 }
+
+extension String {
+    func markdownToAttributed() -> AttributedString? {
+        try? AttributedString(markdown: self, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace))
+    }
+}
+
+extension Collection {
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
+extension Double {
+    func removeZerosFromEnd() -> String {
+        let formatter = NumberFormatter()
+        let number = NSNumber(value: self)
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = (self.description.components(separatedBy: ".").last)!.count
+        return String(formatter.string(from: number) ?? "")
+    }
+}
+
+extension Date {
+    func timeAgoDisplay() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
+}

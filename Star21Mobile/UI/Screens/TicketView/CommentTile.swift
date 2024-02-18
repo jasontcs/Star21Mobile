@@ -11,9 +11,14 @@ extension TicketView {
     struct CommentTile: View {
         let comment: CommentEntity
 
+        init(comment: CommentEntity) {
+            self.comment = comment
+            print(comment.body)
+        }
+
         var body: some View {
             HStack {
-                Text(comment.body)
+                Text(comment.body.markdownToAttributed() ?? "-")
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text(comment.author)

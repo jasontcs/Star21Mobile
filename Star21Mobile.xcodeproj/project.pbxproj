@@ -9,16 +9,37 @@
 /* Begin PBXBuildFile section */
 		B018DC1D2B01C07700E341C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC1C2B01C07700E341C1 /* User.swift */; };
 		B018DC1F2B01C6F900E341C1 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC1E2B01C6F900E341C1 /* Ticket.swift */; };
-		B018DC212B01C75800E341C1 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC202B01C75800E341C1 /* Form.swift */; };
 		B018DC272B01D1DE00E341C1 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC262B01D1DE00E341C1 /* Field.swift */; };
 		B024D00E2B06E42D00428F96 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D00D2B06E42D00428F96 /* TicketView.swift */; };
 		B024D0102B06E43700428F96 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D00F2B06E43700428F96 /* TicketViewModel.swift */; };
 		B024D0132B06E80000428F96 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0122B06E80000428F96 /* MockData.swift */; };
 		B024D0152B07572100428F96 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0142B07572100428F96 /* Constant.swift */; };
-		B024D0172B075A3A00428F96 /* TicketField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0162B075A3A00428F96 /* TicketField.swift */; };
+		B024D0172B075A3A00428F96 /* TicketFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0162B075A3A00428F96 /* TicketFieldView.swift */; };
 		B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0182B075ACB00428F96 /* FieldTile.swift */; };
 		B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */; };
 		B06ECDE32B06E08700F29C41 /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */; };
+		B0732AF52B0EC696002C4398 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC202B01C75800E341C1 /* Form.swift */; };
+		B07363132B1EABC3008F8416 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07363122B1EABC3008F8416 /* ChatView.swift */; };
+		B07363162B1FE699008F8416 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = B07363152B1FE699008F8416 /* CodeScanner */; };
+		B08C90872B27DC8E0030921F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90862B27DC8E0030921F /* AppConfig.swift */; };
+		B08C908A2B2914C70030921F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B08C90892B2914C70030921F /* Lottie */; };
+		B08C908C2B29174E0030921F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C908B2B29174E0030921F /* LoadingView.swift */; };
+		B08C90912B2922EF0030921F /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = B08C90902B2922EF0030921F /* test.json */; };
+		B08C90982B2FA8160030921F /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90972B2FA8160030921F /* EmailVerificationView.swift */; };
+		B08C909E2B2FD0F10030921F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C909D2B2FD0F10030921F /* LottieView.swift */; };
+		B08C90A02B2FE2660030921F /* AnimatedSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C909F2B2FE2660030921F /* AnimatedSplashScreen.swift */; };
+		B08C90A82B3135B00030921F /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B08C90A72B3135B00030921F /* splash.json */; };
+		B08C90AA2B3144270030921F /* EmailFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90A92B3144270030921F /* EmailFieldView.swift */; };
+		B08C90AC2B3144320030921F /* EmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90AB2B3144320030921F /* EmailFieldViewModel.swift */; };
+		B08C90AE2B3144420030921F /* EmailVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90AD2B3144420030921F /* EmailVerificationViewModel.swift */; };
+		B08C90B02B3144C60030921F /* MobileFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90AF2B3144C60030921F /* MobileFieldViewModel.swift */; };
+		B08C90B22B3144D30030921F /* MobileFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90B12B3144D30030921F /* MobileFieldView.swift */; };
+		B08C90B42B3144DF0030921F /* SMSVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90B32B3144DF0030921F /* SMSVerificationView.swift */; };
+		B08C90B62B3144EA0030921F /* SMSVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90B52B3144EA0030921F /* SMSVerificationViewModel.swift */; };
+		B08C90B82B32BE220030921F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90B72B32BE220030921F /* HomeViewModel.swift */; };
+		B08C90BA2B32C0F10030921F /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90B92B32C0F10030921F /* Counter.swift */; };
+		B0A809B22B10699A00E1933A /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A809B12B10699A00E1933A /* AppRouting.swift */; };
+		B0A809C42B1AEC3400E1933A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A809C32B1AEC3400E1933A /* HomeView.swift */; };
 		B0ACB8B62AF630F500DD7F36 /* Star21MobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8B52AF630F500DD7F36 /* Star21MobileApp.swift */; };
 		B0ACB8B82AF630F500DD7F36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8B72AF630F500DD7F36 /* ContentView.swift */; };
 		B0ACB8BA2AF630F900DD7F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ACB8B92AF630F900DD7F36 /* Assets.xcassets */; };
@@ -37,8 +58,6 @@
 		B0ACB9032AFB461800DD7F36 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = B0ACB9022AFB461800DD7F36 /* Factory */; };
 		B0ACB9052AFB469700DD7F36 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9042AFB469700DD7F36 /* AppContainer.swift */; };
 		B0ACB9072AFB512E00DD7F36 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9062AFB512E00DD7F36 /* AuthenticationService.swift */; };
-		B0ACB9112AFC414700DD7F36 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9102AFC414700DD7F36 /* LoginView.swift */; };
-		B0ACB9132AFC415F00DD7F36 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9122AFC415F00DD7F36 /* LoginViewModel.swift */; };
 		B0ACB9162AFC457400DD7F36 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9152AFC457400DD7F36 /* AuthenticationView.swift */; };
 		B0ACB9182AFC458200DD7F36 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9172AFC458200DD7F36 /* AuthenticationViewModel.swift */; };
 		B0ACB91A2AFC779C00DD7F36 /* AsyncSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9192AFC779C00DD7F36 /* AsyncSnapshot.swift */; };
@@ -47,6 +66,9 @@
 		B0ACB9272AFDAFD300DD7F36 /* Models+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9262AFDAFD300DD7F36 /* Models+Mapper.swift */; };
 		B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */; };
 		B0ACB9312AFE0C7400DD7F36 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9302AFE0C7400DD7F36 /* MainView.swift */; };
+		B0B0D45B2B7DE38F0097E63E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B0D45A2B7DE38F0097E63E /* loading.json */; };
+		B0D0EC522B3BA443006A9EC6 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC512B3BA443006A9EC6 /* Avatar.swift */; };
+		B0D0EC542B3BA4B6006A9EC6 /* NotificationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */; };
 		B0DD0BF92B032C200048045D /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD0BF82B032C200048045D /* Stream.swift */; };
 		B0DD0BFB2B0585B50048045D /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD0BFA2B0585B50048045D /* DataType.swift */; };
 		B0DD0BFD2B058FD00048045D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0DD0BFC2B058FD00048045D /* .swiftlint.yml */; };
@@ -55,6 +77,7 @@
 		B0F1F8FE2B0C146800D143C3 /* HotlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */; };
 		B0F1F9032B0C160200D143C3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F9022B0C160200D143C3 /* ProfileView.swift */; };
 		B0F1F9052B0C160B00D143C3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */; };
+		B0F1F9072B0D7D8B00D143C3 /* InfoTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1F9062B0D7D8B00D143C3 /* InfoTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,10 +89,30 @@
 		B024D00F2B06E43700428F96 /* TicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
 		B024D0122B06E80000428F96 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		B024D0142B07572100428F96 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		B024D0162B075A3A00428F96 /* TicketField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketField.swift; sourceTree = "<group>"; };
+		B024D0162B075A3A00428F96 /* TicketFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFieldView.swift; sourceTree = "<group>"; };
 		B024D0182B075ACB00428F96 /* FieldTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTile.swift; sourceTree = "<group>"; };
 		B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
+		B07363122B1EABC3008F8416 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		B08C90862B27DC8E0030921F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		B08C908B2B29174E0030921F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B08C90902B2922EF0030921F /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		B08C90972B2FA8160030921F /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		B08C90992B2FC55B0030921F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B08C909D2B2FD0F10030921F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		B08C909F2B2FE2660030921F /* AnimatedSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSplashScreen.swift; sourceTree = "<group>"; };
+		B08C90A72B3135B00030921F /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		B08C90A92B3144270030921F /* EmailFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldView.swift; sourceTree = "<group>"; };
+		B08C90AB2B3144320030921F /* EmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModel.swift; sourceTree = "<group>"; };
+		B08C90AD2B3144420030921F /* EmailVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewModel.swift; sourceTree = "<group>"; };
+		B08C90AF2B3144C60030921F /* MobileFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileFieldViewModel.swift; sourceTree = "<group>"; };
+		B08C90B12B3144D30030921F /* MobileFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileFieldView.swift; sourceTree = "<group>"; };
+		B08C90B32B3144DF0030921F /* SMSVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSVerificationView.swift; sourceTree = "<group>"; };
+		B08C90B52B3144EA0030921F /* SMSVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSVerificationViewModel.swift; sourceTree = "<group>"; };
+		B08C90B72B32BE220030921F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B08C90B92B32C0F10030921F /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		B0A809B12B10699A00E1933A /* AppRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		B0A809C32B1AEC3400E1933A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B0ACB8B22AF630F500DD7F36 /* Star21Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Star21Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ACB8B52AF630F500DD7F36 /* Star21MobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star21MobileApp.swift; sourceTree = "<group>"; };
 		B0ACB8B72AF630F500DD7F36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,8 +131,6 @@
 		B0ACB8FD2AFB26D500DD7F36 /* SystemEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsHandler.swift; sourceTree = "<group>"; };
 		B0ACB9042AFB469700DD7F36 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		B0ACB9062AFB512E00DD7F36 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		B0ACB9102AFC414700DD7F36 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		B0ACB9122AFC415F00DD7F36 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B0ACB9152AFC457400DD7F36 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		B0ACB9172AFC458200DD7F36 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B0ACB9192AFC779C00DD7F36 /* AsyncSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncSnapshot.swift; sourceTree = "<group>"; };
@@ -98,6 +139,9 @@
 		B0ACB9262AFDAFD300DD7F36 /* Models+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+Mapper.swift"; sourceTree = "<group>"; };
 		B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		B0ACB9302AFE0C7400DD7F36 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B0B0D45A2B7DE38F0097E63E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		B0D0EC512B3BA443006A9EC6 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTile.swift; sourceTree = "<group>"; };
 		B0DD0BF82B032C200048045D /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B0DD0BFA2B0585B50048045D /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		B0DD0BFC2B058FD00048045D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -106,6 +150,7 @@
 		B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotlineButton.swift; sourceTree = "<group>"; };
 		B0F1F9022B0C160200D143C3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B0F1F9062B0D7D8B00D143C3 /* InfoTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +158,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07363162B1FE699008F8416 /* CodeScanner in Frameworks */,
 				B0ACB9032AFB461800DD7F36 /* Factory in Frameworks */,
+				B08C908A2B2914C70030921F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +206,85 @@
 			children = (
 				B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */,
 				B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */,
-				B024D0162B075A3A00428F96 /* TicketField.swift */,
+				B024D0162B075A3A00428F96 /* TicketFieldView.swift */,
 			);
 			path = NewTicketView;
+			sourceTree = "<group>";
+		};
+		B07363112B1EABB7008F8416 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				B07363122B1EABC3008F8416 /* ChatView.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		B08C908F2B2922C60030921F /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90A72B3135B00030921F /* splash.json */,
+				B08C90902B2922EF0030921F /* test.json */,
+				B0B0D45A2B7DE38F0097E63E /* loading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B08C90922B2FA7AB0030921F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90962B2FA7F90030921F /* SMSVerificationView */,
+				B08C90952B2FA7E10030921F /* MobileFieldView */,
+				B08C90942B2FA7D00030921F /* EmailVerificationView */,
+				B08C90932B2FA7BF0030921F /* EmailFieldView */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B08C90932B2FA7BF0030921F /* EmailFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90A92B3144270030921F /* EmailFieldView.swift */,
+				B08C90AB2B3144320030921F /* EmailFieldViewModel.swift */,
+			);
+			path = EmailFieldView;
+			sourceTree = "<group>";
+		};
+		B08C90942B2FA7D00030921F /* EmailVerificationView */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90972B2FA8160030921F /* EmailVerificationView.swift */,
+				B08C90AD2B3144420030921F /* EmailVerificationViewModel.swift */,
+			);
+			path = EmailVerificationView;
+			sourceTree = "<group>";
+		};
+		B08C90952B2FA7E10030921F /* MobileFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90B12B3144D30030921F /* MobileFieldView.swift */,
+				B08C90AF2B3144C60030921F /* MobileFieldViewModel.swift */,
+			);
+			path = MobileFieldView;
+			sourceTree = "<group>";
+		};
+		B08C90962B2FA7F90030921F /* SMSVerificationView */ = {
+			isa = PBXGroup;
+			children = (
+				B08C90B32B3144DF0030921F /* SMSVerificationView.swift */,
+				B08C90B52B3144EA0030921F /* SMSVerificationViewModel.swift */,
+			);
+			path = SMSVerificationView;
+			sourceTree = "<group>";
+		};
+		B0A809C22B1AEC2400E1933A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				B0A809C32B1AEC3400E1933A /* HomeView.swift */,
+				B08C90B72B32BE220030921F /* HomeViewModel.swift */,
+				B08C90B92B32C0F10030921F /* Counter.swift */,
+				B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		B0ACB8A92AF630F500DD7F36 = {
@@ -183,6 +306,8 @@
 		B0ACB8B42AF630F500DD7F36 /* Star21Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				B08C90992B2FC55B0030921F /* Info.plist */,
+				B08C908F2B2922C60030921F /* Lottie */,
 				B0ACB92C2AFE0B9900DD7F36 /* Utilities */,
 				B0ACB8F42AFAEF0500DD7F36 /* Services */,
 				B0ACB8F12AF8A8B600DD7F36 /* Application */,
@@ -193,6 +318,7 @@
 				B0ACB8D52AF8522900DD7F36 /* Data */,
 				B0ACB8B52AF630F500DD7F36 /* Star21MobileApp.swift */,
 				B0ACB8B72AF630F500DD7F36 /* ContentView.swift */,
+				B08C909F2B2FE2660030921F /* AnimatedSplashScreen.swift */,
 				B0ACB8B92AF630F900DD7F36 /* Assets.xcassets */,
 				B0ACB8BB2AF630F900DD7F36 /* Preview Content */,
 				B0DD0BFC2B058FD00048045D /* .swiftlint.yml */,
@@ -229,13 +355,15 @@
 		B0ACB8D72AF8529E00DD7F36 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B08C90922B2FA7AB0030921F /* Login */,
+				B07363112B1EABB7008F8416 /* ChatView */,
+				B0A809C22B1AEC2400E1933A /* HomeView */,
 				B0F1F8FF2B0C15DE00D143C3 /* ProfileView */,
 				B06ECDDF2B06E06800F29C41 /* NewTicketView */,
 				B018DC2D2B01EB4A00E341C1 /* TicketsView */,
 				B018DC2A2B01EB1400E341C1 /* TicketView */,
 				B0ACB92F2AFE0C6A00DD7F36 /* MainView */,
 				B0ACB9142AFC456100DD7F36 /* AuthenticationView */,
-				B0ACB90F2AFC413000DD7F36 /* LoginView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -243,6 +371,9 @@
 		B0ACB8D82AF852AC00DD7F36 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B08C908B2B29174E0030921F /* LoadingView.swift */,
+				B08C909D2B2FD0F10030921F /* LottieView.swift */,
+				B0D0EC512B3BA443006A9EC6 /* Avatar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -280,6 +411,8 @@
 				B0ACB8F22AF8A8C400DD7F36 /* AppState.swift */,
 				B0ACB9042AFB469700DD7F36 /* AppContainer.swift */,
 				B024D0122B06E80000428F96 /* MockData.swift */,
+				B0A809B12B10699A00E1933A /* AppRouting.swift */,
+				B08C90862B27DC8E0030921F /* AppConfig.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -291,15 +424,6 @@
 				B0ACB9062AFB512E00DD7F36 /* AuthenticationService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		B0ACB90F2AFC413000DD7F36 /* LoginView */ = {
-			isa = PBXGroup;
-			children = (
-				B0ACB9102AFC414700DD7F36 /* LoginView.swift */,
-				B0ACB9122AFC415F00DD7F36 /* LoginViewModel.swift */,
-			);
-			path = LoginView;
 			sourceTree = "<group>";
 		};
 		B0ACB9142AFC456100DD7F36 /* AuthenticationView */ = {
@@ -338,6 +462,7 @@
 			children = (
 				B0F1F9022B0C160200D143C3 /* ProfileView.swift */,
 				B0F1F9042B0C160A00D143C3 /* ProfileViewModel.swift */,
+				B0F1F9062B0D7D8B00D143C3 /* InfoTile.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -361,6 +486,8 @@
 			name = Star21Mobile;
 			packageProductDependencies = (
 				B0ACB9022AFB461800DD7F36 /* Factory */,
+				B07363152B1FE699008F8416 /* CodeScanner */,
+				B08C90892B2914C70030921F /* Lottie */,
 			);
 			productName = Star21Mobile;
 			productReference = B0ACB8B22AF630F500DD7F36 /* Star21Mobile.app */;
@@ -392,6 +519,8 @@
 			mainGroup = B0ACB8A92AF630F500DD7F36;
 			packageReferences = (
 				B0ACB9012AFB461800DD7F36 /* XCRemoteSwiftPackageReference "Factory" */,
+				B07363142B1FE699008F8416 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				B08C90882B2914C70030921F /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = B0ACB8B32AF630F500DD7F36 /* Products */;
 			projectDirPath = "";
@@ -407,7 +536,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08C90A82B3135B00030921F /* splash.json in Resources */,
 				B0DD0BFD2B058FD00048045D /* .swiftlint.yml in Resources */,
+				B0B0D45B2B7DE38F0097E63E /* loading.json in Resources */,
+				B08C90912B2922EF0030921F /* test.json in Resources */,
 				B0ACB8BD2AF630F900DD7F36 /* Preview Assets.xcassets in Resources */,
 				B0ACB8BA2AF630F900DD7F36 /* Assets.xcassets in Resources */,
 			);
@@ -440,14 +572,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A809B22B10699A00E1933A /* AppRouting.swift in Sources */,
 				B0ACB9252AFDAF8D00DD7F36 /* Entities.swift in Sources */,
 				B0ACB8EE2AF89F9700DD7F36 /* AppDelegate.swift in Sources */,
+				B08C90B62B3144EA0030921F /* SMSVerificationViewModel.swift in Sources */,
 				B0ACB9052AFB469700DD7F36 /* AppContainer.swift in Sources */,
-				B024D0172B075A3A00428F96 /* TicketField.swift in Sources */,
+				B07363132B1EABC3008F8416 /* ChatView.swift in Sources */,
+				B024D0172B075A3A00428F96 /* TicketFieldView.swift in Sources */,
+				B08C90AA2B3144270030921F /* EmailFieldView.swift in Sources */,
 				B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */,
 				B018DC1D2B01C07700E341C1 /* User.swift in Sources */,
+				B08C90AC2B3144320030921F /* EmailFieldViewModel.swift in Sources */,
+				B0F1F9072B0D7D8B00D143C3 /* InfoTile.swift in Sources */,
 				B024D0152B07572100428F96 /* Constant.swift in Sources */,
-				B018DC212B01C75800E341C1 /* Form.swift in Sources */,
 				B0ACB8C82AF6315000DD7F36 /* TicketsView.swift in Sources */,
 				B0ACB8B82AF630F500DD7F36 /* ContentView.swift in Sources */,
 				B0ACB8B62AF630F500DD7F36 /* Star21MobileApp.swift in Sources */,
@@ -455,32 +592,45 @@
 				B06ECDE32B06E08700F29C41 /* NewTicketViewModel.swift in Sources */,
 				B0F1F9032B0C160200D143C3 /* ProfileView.swift in Sources */,
 				B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */,
+				B08C90BA2B32C0F10030921F /* Counter.swift in Sources */,
 				B0ACB8DE2AF855A700DD7F36 /* ZendeskWenRepository.swift in Sources */,
 				B024D00E2B06E42D00428F96 /* TicketView.swift in Sources */,
 				B024D0132B06E80000428F96 /* MockData.swift in Sources */,
 				B0F1F9052B0C160B00D143C3 /* ProfileViewModel.swift in Sources */,
+				B08C90B02B3144C60030921F /* MobileFieldViewModel.swift in Sources */,
+				B0D0EC542B3BA4B6006A9EC6 /* NotificationTile.swift in Sources */,
+				B08C90B42B3144DF0030921F /* SMSVerificationView.swift in Sources */,
 				B0ACB91C2AFC913F00DD7F36 /* CancelBag.swift in Sources */,
-				B0ACB9132AFC415F00DD7F36 /* LoginViewModel.swift in Sources */,
 				B0F1F8FE2B0C146800D143C3 /* HotlineButton.swift in Sources */,
 				B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */,
 				B024D0102B06E43700428F96 /* TicketViewModel.swift in Sources */,
+				B08C90AE2B3144420030921F /* EmailVerificationViewModel.swift in Sources */,
 				B0ACB8E32AF8590000DD7F36 /* APICall.swift in Sources */,
 				B018DC1F2B01C6F900E341C1 /* Ticket.swift in Sources */,
+				B0A809C42B1AEC3400E1933A /* HomeView.swift in Sources */,
 				B0ACB8E92AF8968200DD7F36 /* TicketsViewModel.swift in Sources */,
 				B0ACB9312AFE0C7400DD7F36 /* MainView.swift in Sources */,
 				B0ACB91A2AFC779C00DD7F36 /* AsyncSnapshot.swift in Sources */,
-				B0ACB9112AFC414700DD7F36 /* LoginView.swift in Sources */,
 				B0F1F8FC2B0AD9CD00D143C3 /* CommentTile.swift in Sources */,
 				B0DD0BF92B032C200048045D /* Stream.swift in Sources */,
+				B0732AF52B0EC696002C4398 /* Form.swift in Sources */,
 				B0ACB9162AFC457400DD7F36 /* AuthenticationView.swift in Sources */,
 				B0ACB9272AFDAFD300DD7F36 /* Models+Mapper.swift in Sources */,
 				B0DD0BFB2B0585B50048045D /* DataType.swift in Sources */,
+				B08C90B82B32BE220030921F /* HomeViewModel.swift in Sources */,
 				B0ACB9072AFB512E00DD7F36 /* AuthenticationService.swift in Sources */,
+				B08C90B22B3144D30030921F /* MobileFieldView.swift in Sources */,
 				B018DC272B01D1DE00E341C1 /* Field.swift in Sources */,
+				B08C90982B2FA8160030921F /* EmailVerificationView.swift in Sources */,
 				B0ACB8F32AF8A8C400DD7F36 /* AppState.swift in Sources */,
 				B0ACB8E12AF8560200DD7F36 /* WebRepository.swift in Sources */,
+				B08C908C2B29174E0030921F /* LoadingView.swift in Sources */,
+				B0D0EC522B3BA443006A9EC6 /* Avatar.swift in Sources */,
 				B0F1F8FA2B0ACEC100D143C3 /* Comment.swift in Sources */,
 				B0ACB9182AFC458200DD7F36 /* AuthenticationViewModel.swift in Sources */,
+				B08C909E2B2FD0F10030921F /* LottieView.swift in Sources */,
+				B08C90872B27DC8E0030921F /* AppConfig.swift in Sources */,
+				B08C90A02B2FE2660030921F /* AnimatedSplashScreen.swift in Sources */,
 				B0ACB8F02AF8A0E800DD7F36 /* SceneDelegate.swift in Sources */,
 				B0ACB8FA2AFB044900DD7F36 /* TicketsService.swift in Sources */,
 				B0ACB8FE2AFB26D500DD7F36 /* SystemEventsHandler.swift in Sources */,
@@ -540,7 +690,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -594,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -615,12 +765,13 @@
 				DEVELOPMENT_TEAM = FC78BY6K7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Star21Mobile/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,12 +796,13 @@
 				DEVELOPMENT_TEAM = FC78BY6K7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Star21Mobile/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,6 +840,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B07363142B1FE699008F8416 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		B08C90882B2914C70030921F /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		B0ACB9012AFB461800DD7F36 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory";
@@ -699,6 +867,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B07363152B1FE699008F8416 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B07363142B1FE699008F8416 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		B08C90892B2914C70030921F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B08C90882B2914C70030921F /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
 		B0ACB9022AFB461800DD7F36 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B0ACB9012AFB461800DD7F36 /* XCRemoteSwiftPackageReference "Factory" */;

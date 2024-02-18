@@ -11,6 +11,7 @@ import Combine
 extension Publisher {
     func listen(in set: inout Set<AnyCancellable>, receiveValue: @escaping ((Self.Output) -> Void)) {
         self.receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
             .sink {_ in
             } receiveValue: { value in
                 receiveValue(value)

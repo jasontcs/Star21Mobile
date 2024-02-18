@@ -15,10 +15,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var systemEventsHandler: SystemEventsHandler?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        print("SceneDelegate")
         let container = Container.shared
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: ContentView(viewModel: .init()))
+            window.rootViewController = UIHostingController(rootView: ContentView(appRouting: .init()))
             self.window = window
             window.makeKeyAndVisible()
         }

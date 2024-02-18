@@ -14,6 +14,10 @@ struct GetRequestsResponse: PagingResponseModel {
     let count: Int
 }
 
+struct GetRequestResponse: Model {
+    let request: Request
+}
+
 struct Request: IdentifiableModel {
     let id: Int
     let subject: String
@@ -61,6 +65,9 @@ struct DraftRequest: Model {
 
 struct DraftComment: Model {
     let body: String
+    enum CodingKeys: String, CodingKey {
+        case body = "html_body"
+    }
 }
 
 struct PostRequestResponse: ResponseModel {

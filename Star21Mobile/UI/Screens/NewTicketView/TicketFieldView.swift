@@ -8,10 +8,11 @@
 import SwiftUI
 
 extension NewTicketView {
-    struct TicketField: View {
+    struct TicketFieldView: View {
         @ObservedObject private(set) var viewModel: NewTicketView.ViewModel
         let field: TicketFieldEntity
         let visible: Bool
+        @Binding var isExpanded: Bool
 
         var body: some View {
             if visible {
@@ -38,11 +39,13 @@ extension NewTicketView {
                     case .tagger:
                         Picker(
                             field.title,
-                            selection: self.fieldBinding(field, defaultValue: Optional<Int>.none)
+                            selection: self.fieldBinding(field, defaultValue: Optional<String>.none)
                         ) {
-                            Text("-").tag(Optional<Int>.none)
-                            ForEach(field.options!) { option in
-                                Text(option.name).tag(Optional(option.id))
+                            Text("-").tag(Optional<String>.none)
+                            if let options = field.options {
+                                ForEach(options) { option in
+                                    Text(option.name).tag(Optional(option.value))
+                                }
                             }
                         }
                     case .integer:
@@ -50,12 +53,14 @@ extension NewTicketView {
                             field.title,
                             value: self.fieldBinding(field, defaultValue: Optional<Int>.none),
                             format: .number
+                                .grouping(.never)
                         ).keyboardType(.numberPad)
                     case .decimal:
                         TextField(
                             field.title,
                             value: self.fieldBinding(field, defaultValue: Optional<Double>.none),
                             format: .number
+                                .grouping(.never)
                         )
                         .keyboardType(.decimalPad)
                         //                case .assignee:
@@ -132,15 +137,20 @@ extension NewTicketView {
                     if let index = viewModel.formValues.firstIndex(where: { $0.field.id == field.id }) {
                         viewModel.formValues[index] = fieldValue
                     }
-
+                    print(viewModel.formValues.map { "\($0.field.title): \($0.value?.raw())" })
                 }
             )
         }
     }
 }
 
-struct TicketField_Previews: PreviewProvider {
+struct TicketFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTicketView.TicketField(viewModel: .init(), field: MockData.field, visible: true)
+        NewTicketView.TicketFieldView(
+            viewModel: .init(),
+            field: MockData.field,
+            visible: true,
+            isExpanded: .constant(true)
+        )
     }
 }
