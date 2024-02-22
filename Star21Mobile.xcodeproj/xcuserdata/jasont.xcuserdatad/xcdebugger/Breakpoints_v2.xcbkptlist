@@ -519,53 +519,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "362634A6-CDDF-40FE-BF73-2A569DE05172"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star21Mobile/Data/WebRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "call(endpoint:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "362634A6-CDDF-40FE-BF73-2A569DE05172 - 86beccca6013cc12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Star21Mobile.WebRepository.call&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: Star21Mobile.APICall) async throws -&gt; &#x3c4;_1_0"
-                  moduleName = "Star21Mobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/WebRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "472">
-               </Location>
-               <Location
-                  uuid = "362634A6-CDDF-40FE-BF73-2A569DE05172 - 86beccca6013cc12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Star21Mobile.WebRepository.call&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: Star21Mobile.APICall) async throws -&gt; &#x3c4;_1_0"
-                  moduleName = "Star21Mobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jasont/projects/Star21Mobile/Star21Mobile/Data/WebRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "544">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

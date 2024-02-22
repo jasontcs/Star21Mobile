@@ -17,6 +17,7 @@
 		B024D0152B07572100428F96 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0142B07572100428F96 /* Constant.swift */; };
 		B024D0172B075A3A00428F96 /* TicketFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0162B075A3A00428F96 /* TicketFieldView.swift */; };
 		B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0182B075ACB00428F96 /* FieldTile.swift */; };
+		B02A8B552B86E473000D7208 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */; };
 		B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */; };
 		B06ECDE32B06E08700F29C41 /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */; };
 		B0732AF52B0EC696002C4398 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC202B01C75800E341C1 /* Form.swift */; };
@@ -94,6 +95,7 @@
 		B024D0142B07572100428F96 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B024D0162B075A3A00428F96 /* TicketFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFieldView.swift; sourceTree = "<group>"; };
 		B024D0182B075ACB00428F96 /* FieldTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTile.swift; sourceTree = "<group>"; };
+		B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
 		B07363122B1EABC3008F8416 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				B08C909D2B2FD0F10030921F /* LottieView.swift */,
 				B0D0EC512B3BA443006A9EC6 /* Avatar.swift */,
 				B0B0D4642B830E020097E63E /* MediaPicker.swift */,
+				B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				B07363132B1EABC3008F8416 /* ChatView.swift in Sources */,
 				B024D0172B075A3A00428F96 /* TicketFieldView.swift in Sources */,
 				B08C90AA2B3144270030921F /* EmailFieldView.swift in Sources */,
+				B02A8B552B86E473000D7208 /* BarcodeScannerView.swift in Sources */,
 				B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */,
 				B018DC1D2B01C07700E341C1 /* User.swift in Sources */,
 				B08C90AC2B3144320030921F /* EmailFieldViewModel.swift in Sources */,

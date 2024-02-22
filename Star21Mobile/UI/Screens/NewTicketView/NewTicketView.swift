@@ -159,26 +159,31 @@ struct NewTicketView: View {
             }
         }
         .sheet(isPresented: $isShowingScanner) {
-            CodeScannerView(
-                codeTypes: [.code128],
-                simulatedData: "8200111122223",
-                videoCaptureDevice: .bestForVideo,
-                completion: handleScan
-            )
+//            CodeScannerView(
+//                codeTypes: [.code128],
+//                simulatedData: "8200111122223",
+//                videoCaptureDevice: .bestForVideo,
+//                completion: handleScan
+//            )
+
+            VStack {
+                Text("Tap the SIM Barcode")
+                    .font(.title)
+                    .padding()
+                BarcodeScannerView(
+                    onCodeTap: handleScan,
+                    simulatedData: "8200111122223"
+                )
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            }
         }
     }
 
-    private func handleScan(result: Result<ScanResult, ScanError>) {
+    private func handleScan(result: String) {
         isShowingScanner = false
-        switch result {
-        case .success(let result):
-            print("Scanning succeeded: \(result.string)")
-            if let intValue = Int(result.string) {
-                viewModel.simBarcodeOnScanned(intValue)
-            }
-
-        case .failure(let error):
-            print("Scanning failed: \(error.localizedDescription)")
+        if let intValue = Int(result) {
+            viewModel.simBarcodeOnScanned(intValue)
         }
     }
 

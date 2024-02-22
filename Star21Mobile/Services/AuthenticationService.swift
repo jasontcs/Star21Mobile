@@ -25,7 +25,7 @@ struct AuthenticationService: AuthenticationServiceProtocol {
     func login(email: String) async {
         guard case .emailPending = appState.authenticationState else { return }
         print("login: \(email)")
-        try? await Task.sleep(until: .now + .seconds(1), clock: .continuous)
+        try? await Task.sleep(until: .now + .seconds(4), clock: .continuous)
         let token = "abcd1234"
         print("login token: \(token)")
         appState.authenticationState = .emailChallenge(token: token)
@@ -54,7 +54,7 @@ struct AuthenticationService: AuthenticationServiceProtocol {
     func verifyMobile(code: String) async {
         guard case let .mobileChallenge(token) = appState.authenticationState else { return }
         print("verifyMobile: \(code) token: \(token)")
-        try? await Task.sleep(until: .now + .seconds(5), clock: .continuous)
+        try? await Task.sleep(until: .now + .seconds(1), clock: .continuous)
         appState.authenticationState = .complete
         appState.session = .withData(
             SessionEntity(
