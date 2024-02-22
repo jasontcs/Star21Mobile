@@ -1,5 +1,5 @@
 //
-//  ZendeskWenRepository.swift
+//  ZendeskWebRepository.swift
 //  Star21Mobile
 //
 //  Created by Jason Tse on 6/11/2023.
@@ -16,6 +16,7 @@ protocol ZendeskWebRepositoryProtocol: WebRepository {
     func getTicketForms(_ identity: SessionEntity, fields: [TicketFieldEntity]) async throws -> [TicketFormEntity]
     func getTicketFields(_ identity: SessionEntity) async throws -> [TicketFieldEntity]
     func getTicketComments(_ identity: SessionEntity, request: OnlineRequestEntity) async throws -> [CommentEntity]
+    func postAttachment(_ identity: SessionEntity, attachment: UploadAttachmentEntity) async throws -> UploadAttachmentEntity
 }
 
 struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
@@ -23,7 +24,7 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
     let session: URLSession
     let baseURL: String
 
-    let logging = false
+    let logging = true
 
     func getSelf(_ identity: SessionEntity) async throws -> UserEntity {
 
@@ -125,6 +126,34 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
         return try response.request.toEntity(forms: [request.ticketForm].compactMap { $0 }, fields: fields)
     }
 
+    func postAttachment(_ identity: SessionEntity, attachment: UploadAttachmentEntity) async throws -> UploadAttachmentEntity {
+
+        guard let token = identity.token, let uid = identity.uid else {
+            throw ZendeskAPIError.noToken
+        }
+
+        let params: [String: String] = [
+            "filename": attachment.fileName
+        ]
+
+        let headers: [String: String] = [
+            "Content-Type": "image/png"
+        ]
+
+        let response: PostUploadResponse = try await call(
+            endpoint: ZendeskAuthenticatedAPICall(
+                path: "uploads",
+                method: .POST,
+                token: token,
+                body: attachment.data,
+                params: params,
+                onBehalfOf: uid,
+                headers: headers
+            )
+        )
+        return try response.upload.toEntity(original: attachment)
+    }
+
     func getTicketForms(_ identity: SessionEntity, fields: [TicketFieldEntity]) async throws -> [TicketFormEntity] {
 
         guard let token = identity.token, let uid = identity.uid else {
@@ -201,17 +230,20 @@ struct ZendeskAuthenticatedAPICall: APICall {
     let body: Data?
     let params: [URLQueryItem]?
 
-    init(path: String, method: HTTPMethod, token: String, body: Data? = nil, params: [String: String]? = nil, onBehalfOf: Int? = nil) {
+    init(path: String, method: HTTPMethod, token: String, body: Data? = nil, params: [String: String]? = nil, onBehalfOf: Int? = nil, headers: [String: String]? = nil) {
         self.path = path
         self.method = method
-        var headers = [
+        var finalHeaders = [
             "Authorization": "Bearer \(token)",
             "Content-Type": "application/json"
         ]
         if let onBehalfOf {
-            headers["X-On-Behalf-Of"] = String(onBehalfOf)
+            finalHeaders["X-On-Behalf-Of"] = String(onBehalfOf)
         }
-        self.headers = headers
+        if let headers {
+            finalHeaders = finalHeaders.merging(headers) { _, new in new }
+        }
+        self.headers = finalHeaders
         self.body = body
         self.params = params?.map { URLQueryItem(name: $0.key, value: $0.value) }
     }

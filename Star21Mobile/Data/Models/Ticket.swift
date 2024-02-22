@@ -65,8 +65,10 @@ struct DraftRequest: Model {
 
 struct DraftComment: Model {
     let body: String
+    let uploads: [String]
     enum CodingKeys: String, CodingKey {
         case body = "html_body"
+        case uploads
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0045C5F2B8583DC00CDC16A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0045C5E2B8583DC00CDC16A /* Launch Screen.storyboard */; };
 		B018DC1D2B01C07700E341C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC1C2B01C07700E341C1 /* User.swift */; };
 		B018DC1F2B01C6F900E341C1 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC1E2B01C6F900E341C1 /* Ticket.swift */; };
 		B018DC272B01D1DE00E341C1 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC262B01D1DE00E341C1 /* Field.swift */; };
@@ -24,7 +25,6 @@
 		B08C90872B27DC8E0030921F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90862B27DC8E0030921F /* AppConfig.swift */; };
 		B08C908A2B2914C70030921F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B08C90892B2914C70030921F /* Lottie */; };
 		B08C908C2B29174E0030921F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C908B2B29174E0030921F /* LoadingView.swift */; };
-		B08C90912B2922EF0030921F /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = B08C90902B2922EF0030921F /* test.json */; };
 		B08C90982B2FA8160030921F /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90972B2FA8160030921F /* EmailVerificationView.swift */; };
 		B08C909E2B2FD0F10030921F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C909D2B2FD0F10030921F /* LottieView.swift */; };
 		B08C90A02B2FE2660030921F /* AnimatedSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C909F2B2FE2660030921F /* AnimatedSplashScreen.swift */; };
@@ -46,7 +46,7 @@
 		B0ACB8BD2AF630F900DD7F36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ACB8BC2AF630F900DD7F36 /* Preview Assets.xcassets */; };
 		B0ACB8C82AF6315000DD7F36 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8C72AF6315000DD7F36 /* TicketsView.swift */; };
 		B0ACB8CA2AF6316C00DD7F36 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8C92AF6316C00DD7F36 /* Models.swift */; };
-		B0ACB8DE2AF855A700DD7F36 /* ZendeskWenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8DD2AF855A700DD7F36 /* ZendeskWenRepository.swift */; };
+		B0ACB8DE2AF855A700DD7F36 /* ZendeskWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8DD2AF855A700DD7F36 /* ZendeskWebRepository.swift */; };
 		B0ACB8E12AF8560200DD7F36 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8E02AF8560200DD7F36 /* WebRepository.swift */; };
 		B0ACB8E32AF8590000DD7F36 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8E22AF8590000DD7F36 /* APICall.swift */; };
 		B0ACB8E92AF8968200DD7F36 /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB8E82AF8968200DD7F36 /* TicketsViewModel.swift */; };
@@ -67,6 +67,8 @@
 		B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */; };
 		B0ACB9312AFE0C7400DD7F36 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9302AFE0C7400DD7F36 /* MainView.swift */; };
 		B0B0D45B2B7DE38F0097E63E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B0D45A2B7DE38F0097E63E /* loading.json */; };
+		B0B0D45F2B82C1ED0097E63E /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = B0B0D45E2B82C1ED0097E63E /* YPImagePicker */; };
+		B0B0D4652B830E020097E63E /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0D4642B830E020097E63E /* MediaPicker.swift */; };
 		B0D0EC522B3BA443006A9EC6 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC512B3BA443006A9EC6 /* Avatar.swift */; };
 		B0D0EC542B3BA4B6006A9EC6 /* NotificationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */; };
 		B0DD0BF92B032C200048045D /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD0BF82B032C200048045D /* Stream.swift */; };
@@ -81,6 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0045C5E2B8583DC00CDC16A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B018DC1C2B01C07700E341C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B018DC1E2B01C6F900E341C1 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		B018DC202B01C75800E341C1 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 		B07363122B1EABC3008F8416 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B08C90862B27DC8E0030921F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		B08C908B2B29174E0030921F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		B08C90902B2922EF0030921F /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		B08C90972B2FA8160030921F /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
 		B08C90992B2FC55B0030921F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B08C909D2B2FD0F10030921F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 		B0ACB8BC2AF630F900DD7F36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0ACB8C72AF6315000DD7F36 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 		B0ACB8C92AF6316C00DD7F36 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		B0ACB8DD2AF855A700DD7F36 /* ZendeskWenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskWenRepository.swift; sourceTree = "<group>"; };
+		B0ACB8DD2AF855A700DD7F36 /* ZendeskWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskWebRepository.swift; sourceTree = "<group>"; };
 		B0ACB8E02AF8560200DD7F36 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		B0ACB8E22AF8590000DD7F36 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		B0ACB8E82AF8968200DD7F36 /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		B0ACB9302AFE0C7400DD7F36 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B0B0D45A2B7DE38F0097E63E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		B0B0D4642B830E020097E63E /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPicker.swift; sourceTree = "<group>"; };
 		B0D0EC512B3BA443006A9EC6 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTile.swift; sourceTree = "<group>"; };
 		B0DD0BF82B032C200048045D /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 				B07363162B1FE699008F8416 /* CodeScanner in Frameworks */,
 				B0ACB9032AFB461800DD7F36 /* Factory in Frameworks */,
 				B08C908A2B2914C70030921F /* Lottie in Frameworks */,
+				B0B0D45F2B82C1ED0097E63E /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				B08C90A72B3135B00030921F /* splash.json */,
-				B08C90902B2922EF0030921F /* test.json */,
 				B0B0D45A2B7DE38F0097E63E /* loading.json */,
 			);
 			path = Lottie;
@@ -322,6 +325,7 @@
 				B0ACB8B92AF630F900DD7F36 /* Assets.xcassets */,
 				B0ACB8BB2AF630F900DD7F36 /* Preview Content */,
 				B0DD0BFC2B058FD00048045D /* .swiftlint.yml */,
+				B0045C5E2B8583DC00CDC16A /* Launch Screen.storyboard */,
 			);
 			path = Star21Mobile;
 			sourceTree = "<group>";
@@ -347,7 +351,7 @@
 			children = (
 				B018DC192B01938200E341C1 /* Models */,
 				B0ACB8E02AF8560200DD7F36 /* WebRepository.swift */,
-				B0ACB8DD2AF855A700DD7F36 /* ZendeskWenRepository.swift */,
+				B0ACB8DD2AF855A700DD7F36 /* ZendeskWebRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -374,6 +378,7 @@
 				B08C908B2B29174E0030921F /* LoadingView.swift */,
 				B08C909D2B2FD0F10030921F /* LottieView.swift */,
 				B0D0EC512B3BA443006A9EC6 /* Avatar.swift */,
+				B0B0D4642B830E020097E63E /* MediaPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				B0ACB9022AFB461800DD7F36 /* Factory */,
 				B07363152B1FE699008F8416 /* CodeScanner */,
 				B08C90892B2914C70030921F /* Lottie */,
+				B0B0D45E2B82C1ED0097E63E /* YPImagePicker */,
 			);
 			productName = Star21Mobile;
 			productReference = B0ACB8B22AF630F500DD7F36 /* Star21Mobile.app */;
@@ -521,6 +527,7 @@
 				B0ACB9012AFB461800DD7F36 /* XCRemoteSwiftPackageReference "Factory" */,
 				B07363142B1FE699008F8416 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				B08C90882B2914C70030921F /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				B0B0D45D2B82C1ED0097E63E /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = B0ACB8B32AF630F500DD7F36 /* Products */;
 			projectDirPath = "";
@@ -536,10 +543,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0045C5F2B8583DC00CDC16A /* Launch Screen.storyboard in Resources */,
 				B08C90A82B3135B00030921F /* splash.json in Resources */,
 				B0DD0BFD2B058FD00048045D /* .swiftlint.yml in Resources */,
 				B0B0D45B2B7DE38F0097E63E /* loading.json in Resources */,
-				B08C90912B2922EF0030921F /* test.json in Resources */,
 				B0ACB8BD2AF630F900DD7F36 /* Preview Assets.xcassets in Resources */,
 				B0ACB8BA2AF630F900DD7F36 /* Assets.xcassets in Resources */,
 			);
@@ -593,7 +600,7 @@
 				B0F1F9032B0C160200D143C3 /* ProfileView.swift in Sources */,
 				B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */,
 				B08C90BA2B32C0F10030921F /* Counter.swift in Sources */,
-				B0ACB8DE2AF855A700DD7F36 /* ZendeskWenRepository.swift in Sources */,
+				B0ACB8DE2AF855A700DD7F36 /* ZendeskWebRepository.swift in Sources */,
 				B024D00E2B06E42D00428F96 /* TicketView.swift in Sources */,
 				B024D0132B06E80000428F96 /* MockData.swift in Sources */,
 				B0F1F9052B0C160B00D143C3 /* ProfileViewModel.swift in Sources */,
@@ -614,6 +621,7 @@
 				B0F1F8FC2B0AD9CD00D143C3 /* CommentTile.swift in Sources */,
 				B0DD0BF92B032C200048045D /* Stream.swift in Sources */,
 				B0732AF52B0EC696002C4398 /* Form.swift in Sources */,
+				B0B0D4652B830E020097E63E /* MediaPicker.swift in Sources */,
 				B0ACB9162AFC457400DD7F36 /* AuthenticationView.swift in Sources */,
 				B0ACB9272AFDAFD300DD7F36 /* Models+Mapper.swift in Sources */,
 				B0DD0BFB2B0585B50048045D /* DataType.swift in Sources */,
@@ -767,8 +775,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Star21Mobile/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The app needs microphone usage";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs photo library usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -798,8 +809,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Star21Mobile/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The app needs microphone usage";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs photo library usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -864,6 +878,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		B0B0D45D2B82C1ED0097E63E /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -881,6 +903,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B0ACB9012AFB461800DD7F36 /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
+		};
+		B0B0D45E2B82C1ED0097E63E /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0B0D45D2B82C1ED0097E63E /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

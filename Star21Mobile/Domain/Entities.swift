@@ -68,6 +68,7 @@ struct DraftRequestEntity: RequestEntity {
     let ticketForm: TicketFormEntity?
     let customFields: [CustomFieldValueEntity]
     let priority: Priority
+    let uploads: [UploadAttachmentEntity]
 }
 
 struct OnlineRequestEntity: RequestEntity, Identifiable {
@@ -90,6 +91,7 @@ struct CommentEntity: Hashable, Identifiable {
     let organization: String
     let isAgent: Bool
     let createdAt: Date
+    let attachments: [AttachmentEntity]
 }
 
 extension OnlineRequestEntity {
@@ -196,4 +198,26 @@ struct NotificationEntity: Hashable, Identifiable {
 enum NotificationStatus: String, CaseIterableDefaultsLast {
     case read
     case unread
+}
+
+struct UploadAttachmentEntity: Hashable {
+    let data: Data
+    let status: UploadAttachmentStatus
+    let fileName: String
+}
+
+enum UploadAttachmentStatus: Hashable {
+    case offline
+    case uploading
+    case online(token: String)
+}
+
+struct AttachmentEntity: Hashable, Identifiable {
+    let id: Int
+    let type: AttachmentType
+    let url: String
+}
+
+enum AttachmentType: Hashable {
+    case image
 }

@@ -21,14 +21,14 @@ struct LoadingView<Content>: View where Content: View {
                     .blur(radius: self.isShowing ? 3 : 0)
 
                 LottieView()
-//                    .padding()
-                    .frame(width: 240, height: 240)
+                    .padding(.all, 2)
+                    .frame(width: 56, height: 56)
 //                    .frame(width: geometry.size.width / 2,
 //                           height: geometry.size.height / 5)
 //                    .background(Color.secondary.colorInvert())
-                    .background(Color.yellow)
+                    .background(Color.gray.opacity(0.3))
                     .foregroundColor(Color.primary)
-                    .cornerRadius(20)
+                    .cornerRadius(8)
                     .opacity(self.isShowing ? 1 : 0)
 
             }

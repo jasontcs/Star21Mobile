@@ -11,6 +11,7 @@ import Combine
 final class AppState {
     @Published var session: AsyncSnapshot<SessionEntity> = .nothing
     @Published var activeRequest: AsyncSnapshot<any RequestEntity> = .nothing
+    @Published var uploadAttachments: [UploadAttachmentEntity] = []
     @Published var requests: AsyncSnapshot<[OnlineRequestEntity]> = .nothing
     @Published var ticketForms: AsyncSnapshot<[TicketFormEntity]> = .nothing
     @Published var showLoading = false

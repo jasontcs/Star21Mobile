@@ -22,7 +22,6 @@ struct GetTicketCommentsResponse: PagingResponseModel {
     }
 }
 
-// MARK: - Comment
 struct Comment: IdentifiableModel {
     let url: String?
     let id: Int
@@ -48,20 +47,6 @@ struct Comment: IdentifiableModel {
     }
 }
 
-struct Attachment: IdentifiableModel {
-    let contentType: String
-    let contentURL: String
-    let fileName: String
-    let id, size: Int
-
-    enum CodingKeys: String, CodingKey {
-        case contentType = "content_type"
-        case contentURL = "content_url"
-        case fileName = "file_name"
-        case id, size
-    }
-}
-
 struct CommentOrganization: IdentifiableModel {
     let id: Int
     let name: String
@@ -76,5 +61,46 @@ struct CommentUser: IdentifiableModel {
     enum CodingKeys: String, CodingKey {
         case id, name, agent
         case organizationID = "organization_id"
+    }
+}
+
+struct PostUploadResponse: Model {
+    let upload: Upload
+}
+
+struct Upload: Model {
+    let token: String
+    let expiresAt: Date
+    let attachments: [Attachment]
+    let attachment: Attachment
+
+    enum CodingKeys: String, CodingKey {
+        case token
+        case expiresAt = "expires_at"
+        case attachments, attachment
+    }
+}
+
+struct Attachment: IdentifiableModel {
+    let url: String
+    let id: Int
+    let fileName: String
+    let contentURL, mappedContentURL: String
+    let contentType: String
+    let size, width, height: Int
+    let inline, deleted, malwareAccessOverride: Bool
+    let malwareScanResult: String
+    let thumbnails: [Attachment]?
+
+    enum CodingKeys: String, CodingKey {
+        case url, id
+        case fileName = "file_name"
+        case contentURL = "content_url"
+        case mappedContentURL = "mapped_content_url"
+        case contentType = "content_type"
+        case size, width, height, inline, deleted
+        case malwareAccessOverride = "malware_access_override"
+        case malwareScanResult = "malware_scan_result"
+        case thumbnails
     }
 }

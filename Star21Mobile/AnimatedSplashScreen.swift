@@ -14,20 +14,47 @@ struct AnimatedSplashScreen: View {
         self.main = AnyView(main)
     }
 
-    @State var finished = false
+    @State var animate = false
+    @State var showSplash = true
 
     var body: some View {
-        if !finished {
-            LottieView(name: "splash") {
-                finished = true
+        GeometryReader { _ in
+            VStack {
+                ZStack {
+                    main
+                    Image("launch")
+                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+                        .scaledToFill()
+                        .scaleEffect(animate ? 50 : 1)
+                        .animation(.easeIn(duration: 1))
+                        .opacity(showSplash ? 1 : 0)
+                        .animation(.easeIn(duration: 0.5))
+                }
             }
-            .background(
-                Image("splash")
-            )
-            .edgesIgnoringSafeArea(.all)
-        } else {
-            main
         }
+        .ignoresSafeArea()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                animate.toggle()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                showSplash.toggle()
+            }
+        }
+//        if !finished {
+//            LottieView(name: "splash") {
+//                finished = true
+//            }
+//            .background(
+//                Image("launch")
+//                    .resizable()
+//                    .scaledToFill()
+//            )
+//            .edgesIgnoringSafeArea(.all)
+//        } else {
+//            main
+//        }
     }
 }
 

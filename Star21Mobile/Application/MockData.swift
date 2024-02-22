@@ -45,7 +45,8 @@ struct MockData {
         author: "Author User",
         organization: "Author Organization",
         isAgent: false,
-        createdAt: Date()
+        createdAt: Date(),
+        attachments: []
     )
 
     static let custom: CustomFieldValueEntity = .init(

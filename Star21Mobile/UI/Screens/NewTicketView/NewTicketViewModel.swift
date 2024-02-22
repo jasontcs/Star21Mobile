@@ -25,6 +25,8 @@ extension NewTicketView {
         @Published var hiddenFields: [TicketFieldEntity] = []
         @Published var submittedRequest: OnlineRequestEntity?
         @Published var isSimCardActivationFormSelected = false
+        @Published var attachments: [UploadAttachmentEntity] = []
+        @Published var formBusy: Bool = false
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -62,6 +64,10 @@ extension NewTicketView {
                             return prev
                         }
                 }
+            appState.$uploadAttachments
+                .listen(in: &cancellables) { attachments in
+                    self.attachments = attachments
+                }
         }
 
         func fetchTickets() async {
@@ -76,7 +82,7 @@ extension NewTicketView {
             await ticketsService.fetchForms()
         }
 
-        func submitRequest(isSimCardActivation: Bool) async {
+        func submitRequest() async {
 
             var customValues = [CustomFieldValueEntity]()
 
@@ -99,10 +105,11 @@ extension NewTicketView {
                 description: description ?? "",
                 ticketForm: selectedForm,
                 customFields: customValues,
-                priority: .normal
+                priority: .normal,
+                uploads: attachments
             )
 
-            if isSimCardActivation {
+            if isSimCardActivationFormSelected {
                 await ticketsService.saveSimActivationRequest(draft)
             } else {
                 await ticketsService.saveRequest(draft)
@@ -119,6 +126,14 @@ extension NewTicketView {
 
         private func resetForm() {
             formValues = selectedForm?.fields.map { .init(field: $0, value: nil) } ?? []
+        }
+
+        func uploadImage(_ image: UIImage) async {
+            await ticketsService.uploadAttachment(.init(data: image.pngData()!, status: .offline, fileName: Date().ISO8601Format() + ".png"))
+        }
+
+        func removeAttachment(_ attachment: UploadAttachmentEntity) {
+            appState.uploadAttachments.removeAll { $0.fileName == attachment.fileName }
         }
     }
 

@@ -45,7 +45,13 @@ extension DraftRequest {
             customFields: value.customFields.map {
                 .init(id: $0.id, value: $0.value)
             },
-            comment: .init(body: value.description),
+            comment: .init(
+                body: value.description,
+                uploads: value.uploads.compactMap {
+                    if case let .online(token) = $0.status { return token }
+                    return nil
+                }
+            ),
             collaborators: [],
             ticketFormId: value.ticketForm?.id,
             priority: value.priority
@@ -122,7 +128,28 @@ extension Comment {
             author: user.name,
             organization: organizations.first { $0.id == user.organizationID }!.name,
             isAgent: user.agent,
-            createdAt: createdAt
+            createdAt: createdAt,
+            attachments: try attachments.map { try $0.toEntity() }
+        )
+    }
+}
+
+extension Upload {
+    func toEntity(original: UploadAttachmentEntity) throws -> UploadAttachmentEntity {
+        return .init(
+            data: original.data,
+            status: .online(token: token),
+            fileName: attachment.fileName
+        )
+    }
+}
+
+extension Attachment {
+    func toEntity() throws -> AttachmentEntity {
+        return .init(
+            id: id,
+            type: .image,
+            url: contentURL
         )
     }
 }

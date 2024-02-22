@@ -13,9 +13,9 @@ struct Star21MobileApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            AnimatedSplashScreen( // fast
+            AnimatedSplashScreen( // fast
                 ContentView(appRouting: .init())
-//            )
+            )
         }
     }
 }

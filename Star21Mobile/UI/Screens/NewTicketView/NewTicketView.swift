@@ -45,7 +45,7 @@ struct NewTicketView: View {
                         }
                         return true
                     }) {
-//                    pagedView
+                    //                    pagedView
                     List {
                         ForEach(fields, id: \.self) { field in
                             List {
@@ -68,20 +68,81 @@ struct NewTicketView: View {
                             }
                         }
                     }
+                    if !viewModel.isSimCardActivationFormSelected {
+                        Section(header: Text("Attachments")) {
+                            ScrollView(.horizontal) {
+                                LazyHStack(spacing: 8) {
+                                    ForEach(viewModel.attachments, id: \.fileName) { item in
+                                        ZStack {
+                                            Image(uiImage: UIImage(data: item.data) ?? UIImage())
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 84, height: 84)
+                                                .clipped()
+
+                                            switch item.status {
+                                            case .offline:
+                                                Image(systemName: "xmark")
+                                                    .background(.gray.opacity(0.7))
+                                            case .uploading:
+                                                ProgressView()
+                                                    .background(.gray.opacity(0.7))
+                                            case .online(let token):
+                                                VStack {
+                                                    HStack {
+                                                        Spacer()
+                                                        Button(action: {
+                                                            viewModel.removeAttachment(item)
+                                                        }) {
+                                                            Image(systemName: "xmark.circle.fill")
+                                                                .foregroundColor(.red)
+                                                                .padding(5)
+                                                        }
+                                                    }
+                                                    .padding(.top, 5)
+                                                    Spacer()
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .listStyle(.plain)
+
+                                    MediaPicker(image: Binding {
+                                        nil
+                                    } set: { image in
+                                        if let image {
+                                            Task { await viewModel.uploadImage(image) }
+                                        }
+                                    }) {
+                                        Image(systemName: "plus")
+                                            .foregroundColor(.white)
+
+                                    }
+                                    .frame(width: 84, height: 84)
+                                    .background(.gray)
+                                }
+                            }
+                        }
+                    }
                     Section {
                         Button("Submit") {
                             Task {
-                                await viewModel.submitRequest(isSimCardActivation: viewModel.isSimCardActivationFormSelected)
+                                viewModel.formBusy = true
+                                await viewModel.submitRequest()
+                                viewModel.formBusy = false
                             }
                         }
+                        .disabled(viewModel.formBusy)
                     }
                 }
             }
             .navigationTitle("New Ticket")
         }
         .task {
+            viewModel.formBusy = true
             await viewModel.fetchForms()
             await viewModel.fetchUser()
+            viewModel.formBusy = false
         }
         .onChange(of: viewModel.submittedRequest) { request in
             if let request {
@@ -176,7 +237,7 @@ struct NewTicketView: View {
                 Section {
                     Button("Submit") {
                         Task {
-                            await viewModel.submitRequest(isSimCardActivation: viewModel.isSimCardActivationFormSelected)
+                            await viewModel.submitRequest()
                         }
                     }
                 }

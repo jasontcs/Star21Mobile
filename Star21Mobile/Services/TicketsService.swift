@@ -15,7 +15,9 @@ protocol TicketsServiceProtocol {
 
     func fetchRequests (searchText: String?, statuses: [RequestStatus]?) async
 
-    func saveRequest  (_ request: any RequestEntity) async
+    func uploadAttachment(_ attachment: UploadAttachmentEntity) async
+
+    func saveRequest (_ request: any RequestEntity) async
 
     func saveSimActivationRequest (_ request: DraftRequestEntity) async
 
@@ -97,8 +99,32 @@ struct TicketsService: TicketsServiceProtocol {
             description: description,
             ticketForm: form,
             customFields: [],
-            priority: .normal
+            priority: .normal,
+            uploads: []
         )
+    }
+
+    func uploadAttachment(_ attachment: UploadAttachmentEntity) async {
+        do {
+            guard case .offline = attachment.status else {
+                return
+            }
+
+            appState.uploadAttachments.append(.init(data: attachment.data, status: .uploading, fileName: attachment.fileName))
+
+            guard let session = appState.session.value else {
+                throw ValueIsMissingError()
+            }
+
+            let online = try await webRepository.postAttachment(session, attachment: attachment)
+
+            appState.uploadAttachments.removeLast()
+            appState.uploadAttachments.append(online)
+
+        } catch {
+            appState.uploadAttachments.removeLast()
+            appState.uploadAttachments.append(.init(data: attachment.data, status: .offline, fileName: attachment.fileName))
+        }
     }
 
     func saveRequest(_ request: any RequestEntity) async {
@@ -117,7 +143,7 @@ struct TicketsService: TicketsServiceProtocol {
             let fields = try await webRepository.getTicketFields(session)
 
             switch request {
-            case var request as DraftRequestEntity:
+            case let request as DraftRequestEntity:
                 submitted = try await webRepository.postRequest(session, request: request, fields: fields)
             case let request as OnlineRequestEntity:
                 throw ValueIsMissingError()
