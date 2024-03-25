@@ -22,22 +22,21 @@ struct GetTicketFormsResponse: PagingResponseModel {
 }
 
 struct TicketForm: IdentifiableModel {
-    let url: String
-    let name, displayName: String
     let id: Int
-    let rawName, rawDisplayName: String
+    let rawName: String
+    let rawDisplayName: String?
     let endUserVisible: Bool
     let position: Int
     let ticketFieldIDS: [Int]
-    let active, ticketFormDefault: Bool
-    let createdAt, updatedAt: Date
-    let inAllBrands: Bool
+    let active, ticketFormDefault, inAllBrands: Bool
     let restrictedBrandIDS: [Int]
     let endUserConditions: [EndUserCondition]
+    let url: String
+    let name: String
+    let displayName: String?
+    let createdAt, updatedAt: Date
 
     enum CodingKeys: String, CodingKey {
-        case url, name
-        case displayName = "display_name"
         case id
         case rawName = "raw_name"
         case rawDisplayName = "raw_display_name"
@@ -46,11 +45,13 @@ struct TicketForm: IdentifiableModel {
         case ticketFieldIDS = "ticket_field_ids"
         case active
         case ticketFormDefault = "default"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
         case inAllBrands = "in_all_brands"
         case restrictedBrandIDS = "restricted_brand_ids"
         case endUserConditions = "end_user_conditions"
+        case url, name
+        case displayName = "display_name"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
     }
 }
 

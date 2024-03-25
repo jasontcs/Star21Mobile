@@ -11,13 +11,33 @@ import SwiftUI
 @MainActor
 final class AppRouting: ObservableObject {
 
-    init(tab: Tab = .home, path: NavigationPath = NavigationPath()) {
+    init(
+        tab: Tab = .home,
+        homePath: [Home] = [],
+        ticketsPath: [Tickets] = [],
+        newTicketPath: [NewTicket] = [],
+        chatPath: [Chat] = [],
+        profilePath: [Profile] = []
+    ) {
         self.tab = tab
-        self.path = path
+        self.homePath = homePath
+        self.ticketsPath = ticketsPath
+        self.newTicketPath = newTicketPath
+        self.chatPath = chatPath
+        self.profilePath = profilePath
     }
 
-    @Published var path: NavigationPath
-    @Published var tab: Tab
+    @Published var tab: Tab {
+        didSet {
+            ticketsPath = []
+            newTicketPath = []
+        }
+    }
+    @Published var homePath: [Home]
+    @Published var ticketsPath: [Tickets]
+    @Published var newTicketPath: [NewTicket]
+    @Published var chatPath: [Chat]
+    @Published var profilePath: [Profile]
 
     enum Tab {
         case home
@@ -27,15 +47,32 @@ final class AppRouting: ObservableObject {
         case profile
     }
 
-    enum Ticket: Hashable {
+    enum Home: Hashable {
+
+    }
+
+    enum Tickets: Hashable {
         case entity(OnlineRequestEntity)
         case id(Int)
+    }
+
+    enum NewTicket: Hashable {
+        case question(TicketFieldEntity)
+        case submit
+    }
+
+    enum Chat: Hashable {
+
+    }
+
+    enum Profile: Hashable {
+
     }
 }
 
 extension AppRouting {
-    func navigateToTicket(_ ticket: Ticket) {
+    func navigateToTicket(_ ticket: Tickets) {
         tab = .tickets
-        path = NavigationPath([ticket])
+        ticketsPath = [ticket]
     }
 }

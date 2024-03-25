@@ -20,7 +20,16 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
-        //
+        scannerViewController.delegate = context.coordinator
+        try? uiViewController.startScanning()
+
+        if !DataScannerViewController.isSupported {
+            onCodeTap(simulatedData)
+        }
+    }
+
+    static func dismantleUIViewController(_ uiViewController: DataScannerViewController, coordinator: Coordinator) {
+        uiViewController.stopScanning()
     }
 
     var scannerViewController: DataScannerViewController = DataScannerViewController(
@@ -32,13 +41,6 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
     )
 
     func makeUIViewController(context: Context) -> DataScannerViewController {
-        scannerViewController.delegate = context.coordinator
-
-        do {
-            try scannerViewController.startScanning()
-        } catch {
-            onCodeTap(simulatedData)
-        }
 
         return scannerViewController
     }

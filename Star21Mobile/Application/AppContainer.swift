@@ -21,7 +21,7 @@ private let session = {
 extension Container {
 
     var appConfig: Factory<AppConfig> {
-        self { DevAppConfig() }.shared
+        self { DevAppConfig() }.singleton
     }
 
     var webRepository: Factory<ZendeskWebRepositoryProtocol> {
@@ -31,18 +31,27 @@ extension Container {
             baseURL: Container.shared.appConfig().zendeskApiBaseUrl
         )
 
-        return self { zendeskWebRepository }
+        return self { zendeskWebRepository }.singleton
+    }
+
+    var userInfoRepository: Factory<UserInfoRepositoryProtocol> {
+        self { UserInfoRepository() }.singleton
     }
 
     var appState: Factory<AppState> {
-        self { AppState() }.shared
+        self { AppState() }.singleton
     }
 
     var ticketsService: Factory<TicketsServiceProtocol> {
-        self { TicketsService(appState: self.appState(), webRepository: self.webRepository()) }.shared
+        self { TicketsService(
+                appState: self.appState(),
+                webRepository: self.webRepository(),
+                userInfoRepository: self.userInfoRepository()
+            )
+        }.singleton
     }
 
     var authenticationService: Factory<AuthenticationServiceProtocol> {
-        self { AuthenticationService(appState: self.appState()) }.shared
+        self { AuthenticationService(appState: self.appState()) }.singleton
     }
 }

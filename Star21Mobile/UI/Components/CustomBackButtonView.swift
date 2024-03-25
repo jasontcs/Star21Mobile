@@ -7,14 +7,41 @@
 
 import SwiftUI
 
-struct CustomBackButtonView: View {
+struct CustomBackButtonView<Content: View>: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    let content: () -> Content
+    let onBack: () -> Void
+    let visible: Bool
+
+    init(visible: Bool = true, @ViewBuilder content: @escaping () -> Content, onBack: @escaping () -> Void) {
+        self.visible = visible
+        self.content = content
+        self.onBack = onBack
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        content()
+
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: visible ? Button(action: {
+            onBack()
+//            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("Back")
+            }
+        } : nil)
     }
 }
 
 struct CustomBackButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomBackButtonView()
+        CustomBackButtonView {
+            EmptyView()
+        } onBack: {
+            //
+        }
     }
 }

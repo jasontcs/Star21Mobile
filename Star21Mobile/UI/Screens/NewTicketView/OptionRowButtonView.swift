@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct OptionRowButtonView: View {
+    let title: String
+    let onTap: () -> Void
+
+    init(_ title: String, onTap: @escaping () -> Void) {
+        self.title = title
+        self.onTap = onTap
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(title)
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+        .onTapGesture {
+            onTap()
+        }
     }
 }
 
 #Preview {
-    OptionRowButtonView()
+    OptionRowButtonView("") {}
 }

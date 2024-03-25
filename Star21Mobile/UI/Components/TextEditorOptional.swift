@@ -28,7 +28,7 @@ struct TextEditorOptional: View {
     }
 }
 
-struct TextFieldOptional_Previews: PreviewProvider {
+struct TextEditorOptional_Previews: PreviewProvider {
     static var previews: some View {
         TextEditorOptional(text: .constant(nil))
     }

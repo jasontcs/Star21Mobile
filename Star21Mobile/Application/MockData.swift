@@ -16,7 +16,8 @@ struct MockData {
         type: .text,
         required: false,
         options: nil,
-        regexForValidation: nil
+        regexForValidation: nil,
+        tags: []
     )
 
     static let onlineTicket: OnlineRequestEntity = .init(

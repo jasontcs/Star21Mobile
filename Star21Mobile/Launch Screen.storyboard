@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_reduced" translatesAutoresizingMaskIntoConstraints="NO" id="6in-MY-Xh7">
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="launch_centre_reduced" translatesAutoresizingMaskIntoConstraints="NO" id="6in-MY-Xh7">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tor-8q-Z4G"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6in-MY-Xh7" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="Nlr-5j-XMD"/>
-                            <constraint firstItem="6in-MY-Xh7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="VKq-iE-heX"/>
-                            <constraint firstItem="6in-MY-Xh7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dO2-pZ-CdF"/>
-                            <constraint firstItem="6in-MY-Xh7" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="pyk-yz-Ylh"/>
+                            <constraint firstItem="6in-MY-Xh7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Mm-ls-Fux"/>
+                            <constraint firstItem="6in-MY-Xh7" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="Bj7-Wr-MxB"/>
+                            <constraint firstItem="6in-MY-Xh7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="TQp-Fa-nFM"/>
+                            <constraint firstItem="6in-MY-Xh7" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="dsR-I0-0Mx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch_reduced" width="371" height="818"/>
+        <image name="launch_centre_reduced" width="1179" height="2600"/>
     </resources>
 </document>

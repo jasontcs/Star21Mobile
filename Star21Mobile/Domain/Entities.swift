@@ -118,6 +118,7 @@ struct UserEntity: Hashable, Identifiable {
     let id: Int
     let name: String
     let email: String
+    let phone: String
     let tags: [String]
 }
 
@@ -128,6 +129,14 @@ struct TicketFormEntity: Hashable, Identifiable {
     let conditions: [TicketFormCondition]
 }
 
+enum TicketFieldTag: String, CaseIterableDefaultsLast {
+    case scanBarcode = "scan_barcode"
+    case mobileForm = "mobile_form"
+    case subject
+    case description
+    case attachments
+}
+
 struct TicketFieldEntity: Hashable, Identifiable {
     let id: Int
     let title: String
@@ -136,6 +145,13 @@ struct TicketFieldEntity: Hashable, Identifiable {
     let required: Bool
     let options: [TicketFieldOption]?
     let regexForValidation: String?
+    let tags: [TicketFieldTag]?
+
+    func withTag(_ tag: TicketFieldTag) -> Bool {
+        tags?.contains(where: {
+            $0 == tag
+        }) ?? false
+    }
 }
 
 enum TicketFieldType: String, CaseIterableDefaultsLast {

@@ -14,29 +14,37 @@ struct MainView: View {
 
     var body: some View {
         VStack {
-            switch appRouting.tab {
-            case .home:
-                HomeView(viewModel: .init())
-            case .tickets:
-                TicketsView(viewModel: .init())
-            case .newTicket:
-                NewTicketView(viewModel: .init())
-            case .chat:
-                ChatView()
-            case .profile:
-                ProfileView(viewModel: .init())
-            }
+                switch appRouting.tab {
+                case .home:
+                    NavigationStack(path: $appRouting.homePath) {
+                        HomeView(viewModel: .init())
+                    }
+                case .tickets:
+                    NavigationStack(path: $appRouting.ticketsPath) {
+                        TicketsView(viewModel: .init())
+                    }
+                case .newTicket:
+                    NavigationStack(path: $appRouting.newTicketPath) {
+                        NewTicketView(viewModel: .init())
+                    }
+                case .chat:
+                    NavigationStack(path: $appRouting.chatPath) {
+                        ChatView()
+                    }
+                case .profile:
+                    NavigationStack(path: $appRouting.profilePath) {
+                        ProfileView(viewModel: .init())
+                    }
+                }
             Spacer()
             BottomBar(selectedTab: $appRouting.tab)
 
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HotlineButton()
             }
-        }
-        .navigationDestination(for: AppRouting.Ticket.self) { route in
-            TicketView(viewModel: .init(), request: route)
         }
         .task {
             await viewModel.fetchUser()

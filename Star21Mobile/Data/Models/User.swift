@@ -15,5 +15,6 @@ struct User: Codable, Hashable, Identifiable {
     let id: Int
     let name: String
     let email: String
+    let phone: String
     let tags: [String]
 }

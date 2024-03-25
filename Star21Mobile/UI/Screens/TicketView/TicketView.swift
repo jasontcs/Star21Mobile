@@ -14,7 +14,7 @@ struct TicketView: View {
     let request: OnlineRequestEntity?
     let requestId: Int?
 
-    init(viewModel: ViewModel, request: AppRouting.Ticket) {
+    init(viewModel: ViewModel, request: AppRouting.Tickets) {
         _viewModel = StateObject(wrappedValue: viewModel)
         switch request {
         case .entity(let request):

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Factory
 
 protocol ZendeskWebRepositoryProtocol: WebRepository {
     func getSelf(_ identity: SessionEntity) async throws -> UserEntity
@@ -24,7 +25,7 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
     let session: URLSession
     let baseURL: String
 
-    let logging = true
+    let logging = Container.shared.appConfig().networkLogging
 
     func getSelf(_ identity: SessionEntity) async throws -> UserEntity {
 
@@ -164,9 +165,9 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
             endpoint: ZendeskAuthenticatedAPICall(
                 path: "ticket_forms",
                 method: .GET,
-                token: token,
+                token: token
 //                params: ["active": "true"],
-                onBehalfOf: uid
+//                onBehalfOf: uid
             )
         )
 
@@ -185,8 +186,8 @@ struct ZendeskWebRepository: ZendeskWebRepositoryProtocol {
             endpoint: ZendeskAuthenticatedAPICall(
                 path: "ticket_fields",
                 method: .GET,
-                token: token,
-                onBehalfOf: uid
+                token: token
+//                onBehalfOf: uid
             )
         )
         return response.ticketFields.map { $0.toEntity() }

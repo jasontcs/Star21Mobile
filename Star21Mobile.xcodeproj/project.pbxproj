@@ -18,11 +18,16 @@
 		B024D0172B075A3A00428F96 /* TicketFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0162B075A3A00428F96 /* TicketFieldView.swift */; };
 		B024D0192B075ACB00428F96 /* FieldTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024D0182B075ACB00428F96 /* FieldTile.swift */; };
 		B02A8B552B86E473000D7208 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */; };
+		B0419ABB2B8C585200275D6F /* DatePickerOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0419ABA2B8C585200275D6F /* DatePickerOptional.swift */; };
+		B0419ABD2B8C633000275D6F /* TextEditorOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0419ABC2B8C633000275D6F /* TextEditorOptional.swift */; };
+		B04A16A82B919011008BB284 /* CustomBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04A16A72B919011008BB284 /* CustomBackButtonView.swift */; };
 		B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */; };
 		B06ECDE32B06E08700F29C41 /* NewTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */; };
 		B0732AF52B0EC696002C4398 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = B018DC202B01C75800E341C1 /* Form.swift */; };
 		B07363132B1EABC3008F8416 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07363122B1EABC3008F8416 /* ChatView.swift */; };
 		B07363162B1FE699008F8416 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = B07363152B1FE699008F8416 /* CodeScanner */; };
+		B080AE742BA10E2A00CC9BA0 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AE732BA10E2A00CC9BA0 /* PagingView.swift */; };
+		B080AE762BA10FBC00CC9BA0 /* OptionRowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AE752BA10FBC00CC9BA0 /* OptionRowButtonView.swift */; };
 		B08C90872B27DC8E0030921F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C90862B27DC8E0030921F /* AppConfig.swift */; };
 		B08C908A2B2914C70030921F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B08C90892B2914C70030921F /* Lottie */; };
 		B08C908C2B29174E0030921F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C908B2B29174E0030921F /* LoadingView.swift */; };
@@ -67,9 +72,11 @@
 		B0ACB9272AFDAFD300DD7F36 /* Models+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9262AFDAFD300DD7F36 /* Models+Mapper.swift */; };
 		B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */; };
 		B0ACB9312AFE0C7400DD7F36 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACB9302AFE0C7400DD7F36 /* MainView.swift */; };
+		B0ACC9C82B9ADBF800106324 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACC9C72B9ADBF800106324 /* UserInfoRepository.swift */; };
 		B0B0D45B2B7DE38F0097E63E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B0D45A2B7DE38F0097E63E /* loading.json */; };
 		B0B0D45F2B82C1ED0097E63E /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = B0B0D45E2B82C1ED0097E63E /* YPImagePicker */; };
 		B0B0D4652B830E020097E63E /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0D4642B830E020097E63E /* MediaPicker.swift */; };
+		B0BD47BA2BACF87C00695506 /* NewTicketPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD47B92BACF87C00695506 /* NewTicketPageView.swift */; };
 		B0D0EC522B3BA443006A9EC6 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC512B3BA443006A9EC6 /* Avatar.swift */; };
 		B0D0EC542B3BA4B6006A9EC6 /* NotificationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */; };
 		B0DD0BF92B032C200048045D /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD0BF82B032C200048045D /* Stream.swift */; };
@@ -96,9 +103,14 @@
 		B024D0162B075A3A00428F96 /* TicketFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFieldView.swift; sourceTree = "<group>"; };
 		B024D0182B075ACB00428F96 /* FieldTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTile.swift; sourceTree = "<group>"; };
 		B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		B0419ABA2B8C585200275D6F /* DatePickerOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerOptional.swift; sourceTree = "<group>"; };
+		B0419ABC2B8C633000275D6F /* TextEditorOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorOptional.swift; sourceTree = "<group>"; };
+		B04A16A72B919011008BB284 /* CustomBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonView.swift; sourceTree = "<group>"; };
 		B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketView.swift; sourceTree = "<group>"; };
 		B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketViewModel.swift; sourceTree = "<group>"; };
 		B07363122B1EABC3008F8416 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		B080AE732BA10E2A00CC9BA0 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		B080AE752BA10FBC00CC9BA0 /* OptionRowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRowButtonView.swift; sourceTree = "<group>"; };
 		B08C90862B27DC8E0030921F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		B08C908B2B29174E0030921F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B08C90972B2FA8160030921F /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
@@ -143,8 +155,10 @@
 		B0ACB9262AFDAFD300DD7F36 /* Models+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+Mapper.swift"; sourceTree = "<group>"; };
 		B0ACB92A2AFE077700DD7F36 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		B0ACB9302AFE0C7400DD7F36 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B0ACC9C72B9ADBF800106324 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		B0B0D45A2B7DE38F0097E63E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		B0B0D4642B830E020097E63E /* MediaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPicker.swift; sourceTree = "<group>"; };
+		B0BD47B92BACF87C00695506 /* NewTicketPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketPageView.swift; sourceTree = "<group>"; };
 		B0D0EC512B3BA443006A9EC6 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		B0D0EC532B3BA4B6006A9EC6 /* NotificationTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTile.swift; sourceTree = "<group>"; };
 		B0DD0BF82B032C200048045D /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
@@ -213,6 +227,9 @@
 				B06ECDE02B06E07C00F29C41 /* NewTicketView.swift */,
 				B06ECDE22B06E08700F29C41 /* NewTicketViewModel.swift */,
 				B024D0162B075A3A00428F96 /* TicketFieldView.swift */,
+				B080AE732BA10E2A00CC9BA0 /* PagingView.swift */,
+				B080AE752BA10FBC00CC9BA0 /* OptionRowButtonView.swift */,
+				B0BD47B92BACF87C00695506 /* NewTicketPageView.swift */,
 			);
 			path = NewTicketView;
 			sourceTree = "<group>";
@@ -311,6 +328,7 @@
 		B0ACB8B42AF630F500DD7F36 /* Star21Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				B0ACC9C62B9ADBE500106324 /* Device */,
 				B08C90992B2FC55B0030921F /* Info.plist */,
 				B08C908F2B2922C60030921F /* Lottie */,
 				B0ACB92C2AFE0B9900DD7F36 /* Utilities */,
@@ -382,6 +400,9 @@
 				B0D0EC512B3BA443006A9EC6 /* Avatar.swift */,
 				B0B0D4642B830E020097E63E /* MediaPicker.swift */,
 				B02A8B542B86E473000D7208 /* BarcodeScannerView.swift */,
+				B0419ABA2B8C585200275D6F /* DatePickerOptional.swift */,
+				B0419ABC2B8C633000275D6F /* TextEditorOptional.swift */,
+				B04A16A72B919011008BB284 /* CustomBackButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -463,6 +484,14 @@
 				B0F1F8FD2B0C146800D143C3 /* HotlineButton.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		B0ACC9C62B9ADBE500106324 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				B0ACC9C72B9ADBF800106324 /* UserInfoRepository.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		B0F1F8FF2B0C15DE00D143C3 /* ProfileView */ = {
@@ -594,6 +623,8 @@
 				B0ACB92B2AFE077700DD7F36 /* BottomBarView.swift in Sources */,
 				B018DC1D2B01C07700E341C1 /* User.swift in Sources */,
 				B08C90AC2B3144320030921F /* EmailFieldViewModel.swift in Sources */,
+				B080AE742BA10E2A00CC9BA0 /* PagingView.swift in Sources */,
+				B0BD47BA2BACF87C00695506 /* NewTicketPageView.swift in Sources */,
 				B0F1F9072B0D7D8B00D143C3 /* InfoTile.swift in Sources */,
 				B024D0152B07572100428F96 /* Constant.swift in Sources */,
 				B0ACB8C82AF6315000DD7F36 /* TicketsView.swift in Sources */,
@@ -614,6 +645,7 @@
 				B0ACB91C2AFC913F00DD7F36 /* CancelBag.swift in Sources */,
 				B0F1F8FE2B0C146800D143C3 /* HotlineButton.swift in Sources */,
 				B06ECDE12B06E07C00F29C41 /* NewTicketView.swift in Sources */,
+				B0419ABB2B8C585200275D6F /* DatePickerOptional.swift in Sources */,
 				B024D0102B06E43700428F96 /* TicketViewModel.swift in Sources */,
 				B08C90AE2B3144420030921F /* EmailVerificationViewModel.swift in Sources */,
 				B0ACB8E32AF8590000DD7F36 /* APICall.swift in Sources */,
@@ -621,6 +653,7 @@
 				B0A809C42B1AEC3400E1933A /* HomeView.swift in Sources */,
 				B0ACB8E92AF8968200DD7F36 /* TicketsViewModel.swift in Sources */,
 				B0ACB9312AFE0C7400DD7F36 /* MainView.swift in Sources */,
+				B0ACC9C82B9ADBF800106324 /* UserInfoRepository.swift in Sources */,
 				B0ACB91A2AFC779C00DD7F36 /* AsyncSnapshot.swift in Sources */,
 				B0F1F8FC2B0AD9CD00D143C3 /* CommentTile.swift in Sources */,
 				B0DD0BF92B032C200048045D /* Stream.swift in Sources */,
@@ -629,6 +662,7 @@
 				B0ACB9162AFC457400DD7F36 /* AuthenticationView.swift in Sources */,
 				B0ACB9272AFDAFD300DD7F36 /* Models+Mapper.swift in Sources */,
 				B0DD0BFB2B0585B50048045D /* DataType.swift in Sources */,
+				B080AE762BA10FBC00CC9BA0 /* OptionRowButtonView.swift in Sources */,
 				B08C90B82B32BE220030921F /* HomeViewModel.swift in Sources */,
 				B0ACB9072AFB512E00DD7F36 /* AuthenticationService.swift in Sources */,
 				B08C90B22B3144D30030921F /* MobileFieldView.swift in Sources */,
@@ -639,7 +673,9 @@
 				B08C908C2B29174E0030921F /* LoadingView.swift in Sources */,
 				B0D0EC522B3BA443006A9EC6 /* Avatar.swift in Sources */,
 				B0F1F8FA2B0ACEC100D143C3 /* Comment.swift in Sources */,
+				B04A16A82B919011008BB284 /* CustomBackButtonView.swift in Sources */,
 				B0ACB9182AFC458200DD7F36 /* AuthenticationViewModel.swift in Sources */,
+				B0419ABD2B8C633000275D6F /* TextEditorOptional.swift in Sources */,
 				B08C909E2B2FD0F10030921F /* LottieView.swift in Sources */,
 				B08C90872B27DC8E0030921F /* AppConfig.swift in Sources */,
 				B08C90A02B2FE2660030921F /* AnimatedSplashScreen.swift in Sources */,
@@ -779,6 +815,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Star21Mobile/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app meeds location permission";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The app needs microphone usage";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs photo library usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -813,6 +850,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Star21Mobile/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs camera usage";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app meeds location permission";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "The app needs microphone usage";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app needs photo library usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

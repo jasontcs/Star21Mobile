@@ -17,18 +17,24 @@ struct ContentView: View {
 
     var body: some View {
         LoadingView(isShowing: $showLoading) {
-            NavigationStack(path: $appRouting.path) {
-                AuthenticationView(viewModel: .init())
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .environmentObject(appRouting)
+            AuthenticationView(viewModel: .init())
+                .environmentObject(appRouting)
         }
         .onReceive(appState.$showLoading) { showLoading = $0 }
-        .onChange(of: appRouting.path) { path in
-            print(path)
+        .onChange(of: appRouting.ticketsPath) { path in
+            print("ticketsPath: \(path)")
+        }
+        .onChange(of: appRouting.newTicketPath) { paths in
+            let descriptions = paths.map {
+                switch $0 {
+                case .question(let question): return question.title
+                case .submit: return "submit"
+                }
+            }
+            print("newTicketPath: \(descriptions)")
         }
         .onChange(of: appRouting.tab) { tab in
-            print(tab)
+            print("tab: \(tab)")
         }
     }
 }

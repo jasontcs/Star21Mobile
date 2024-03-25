@@ -13,7 +13,6 @@ extension TicketView {
 
         init(comment: CommentEntity) {
             self.comment = comment
-            print(comment.body)
         }
 
         var body: some View {

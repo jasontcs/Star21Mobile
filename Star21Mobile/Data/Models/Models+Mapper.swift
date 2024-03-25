@@ -11,6 +11,7 @@ extension User {
             id: id,
             name: name,
             email: email,
+            phone: phone,
             tags: tags
         )
     }
@@ -85,7 +86,8 @@ extension TicketForm {
                     type: field.type,
                     required: field.required,
                     options: field.options,
-                    regexForValidation: field.regexForValidation
+                    regexForValidation: field.regexForValidation,
+                    tags: field.tags
                 )
             },
             conditions: conditions
@@ -97,12 +99,14 @@ extension TicketField {
     func toEntity() -> TicketFieldEntity {
         .init(
             id: id,
-            title: title,
+//            title: title,
+            title: titleInPortal,
             description: description,
             type: type,
             required: self.required,
             options: customFieldOptions?.map { $0.toEntity() },
-            regexForValidation: regexpForValidation
+            regexForValidation: regexpForValidation,
+            tags: agentDescription?.split(separator: ",").compactMap { .init(rawValue: String($0)) }
         )
     }
 }

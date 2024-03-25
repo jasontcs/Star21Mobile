@@ -30,7 +30,7 @@ struct TicketsView: View {
                     }
                     Section(header: Text("Total: \(tickets.count)")) {
                         ForEach(tickets) { ticket in
-                            NavigationLink(value: AppRouting.Ticket.entity(ticket)) {
+                            NavigationLink(value: AppRouting.Tickets.entity(ticket)) {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         Text(ticket.subject)
@@ -66,6 +66,9 @@ struct TicketsView: View {
         .frame(maxHeight: .infinity)
         .task {
             Task { await viewModel.fetchTickets() }
+        }
+        .navigationDestination(for: AppRouting.Tickets.self) { route in
+            TicketView(viewModel: .init(), request: route)
         }
     }
 }

@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct PagingView: View {
+    @EnvironmentObject private var appRouting: AppRouting
+    @ObservedObject private(set) var viewModel: NewTicketView.ViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let field: TicketFieldEntity? = {
+            switch appRouting.newTicketPath.last {
+            case .question(let field): return field
+            case .submit: return nil
+            case .none: return nil
+            }
+        }()
+        return Button {
+            let next = viewModel.nextQuestionFrom(field)
+            appRouting.newTicketPath.append(next != nil ? .question(next!) : .submit)
+        } label: {
+            Text("Next")
+        }
     }
 }
 
 #Preview {
-    PagingView()
+    PagingView(viewModel: .init())
 }
